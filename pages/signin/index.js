@@ -17,7 +17,7 @@ const Signin = () => {
     <div className={styles.signin}>
       <div className={styles.signin_content}>
         <div className={styles.signin_img}>
-          <Image src="/" alt="logo" width={200} height={300} />
+          <Image src="/signin.png" alt="logo" width={300} height={600} />
         </div>
         <div className={styles.sigin_form}>
           <h2 className={styles.signin_form_heading}>Sign in</h2>

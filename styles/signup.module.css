@@ -1,0 +1,107 @@
+/* input[type=password]::-ms-reveal,
+input[type=password]::-ms-clear
+{
+    display: none;
+} */
+
+.signin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 5.375em);
+}
+
+.signin_form_heading {
+    font-weight: 500;
+}
+
+.signin_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1rem;
+    width: 55%;
+    height: 573px;
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+
+.signin_img, .sigin_form {
+    width: 49%;
+}
+
+
+.sigin_form {
+    width: 95%;
+    padding: 2.5rem;
+}
+
+.signin_oauth {
+    cursor: pointer;
+}
+
+.sigin_oauth_google_text {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem;
+    border: 0.559028px solid #333333;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+}
+
+.signin_line {
+    width: 100%; 
+    text-align: center; 
+    /* border-bottom: 2px solid #666;  */
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+    background: rgba(102, 102, 102, 0.25);
+} 
+
+.signin_line span { 
+    background:#fff; 
+    padding:0 10px; 
+}
+
+.signin_form_inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    width: 100%;
+}
+
+.signin_input_label {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.signin_form_input_field {
+    margin-top: 0.2rem;
+    width: 92%;
+    padding: 1rem;
+    border: 0.559028px solid #666;
+    border-radius: 0.6rem;
+    margin-bottom: 0.7rem;
+}
+
+.signin_input_button {
+    width: 50%;
+    cursor: pointer;
+    padding: 1rem;
+    margin-top: 0.8rem;
+    border: 0.559028px solid #666;
+    border-radius: 2rem;
+    background: #333;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.signin_input_button:hover {
+    background: #fff;
+    color: #333;
+}
