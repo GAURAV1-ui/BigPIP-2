@@ -1,38 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
+
 // import ExpandMenu from "./ExpandMenu";
-const Drawer = ({ isOpen, toggleDrawer, routes }) => {
-  return (
-    <>
-      {isOpen && <Backdrop onClick={toggleDrawer} />}
-      <SDrawer isOpen={isOpen}>
-        <RightNav>
-          {/* <SNavbarBrand>LOGO</SNavbarBrand> */}
-          <NavRoutes>
 
-          <NavRoute to="faq" key="home">
-                  Faq
-                </NavRoute>
-                <NavRoute to="aboutus" key="home">
-                  About us
-                </NavRoute>
-                <NavRoute to="getstarted" key="home">
-                  Get Started
-                </NavRoute>
-
-          </NavRoutes>
-          <LoginButton>Login</LoginButton>
-        </RightNav>
-      </SDrawer>
-    </>
-  );
-};
-
-export default Drawer;
-const SNavbarBrand = styled.h2`
-  font-size: 3rem;
-`;
+// const SNavbarBrand = styled.h2`
+//   font-size: 3rem;
+// `;
 const Backdrop = styled.div`
   height: 100%;
   width: 100%;
@@ -85,3 +59,31 @@ const LoginButton = styled.button`
     // box-shadow: 0px 0px 10px yellow;
   }
 `;
+const Drawer = ({ isOpen, toggleDrawer }) => {
+  return (
+    <>
+      {isOpen && <Backdrop onClick={toggleDrawer} />}
+      <SDrawer isOpen={isOpen}>
+        <RightNav>
+          {/* <SNavbarBrand>LOGO</SNavbarBrand> */}
+          <NavRoutes>
+
+          <NavRoute to="faq" key="home">
+                  Faq
+                </NavRoute>
+                <NavRoute to="aboutus" key="home">
+                  About us
+                </NavRoute>
+                <NavRoute to="getstarted" key="home">
+                  Get Started
+                </NavRoute>
+
+          </NavRoutes>
+          <LoginButton>Login</LoginButton>
+        </RightNav>
+      </SDrawer>
+    </>
+  );
+};
+
+export default Drawer;

@@ -1,5 +1,5 @@
 import { IconContext } from "react-icons/lib";
-import "./Footer.css";
+import "/Footer.css";
 import { FaDiscord, FaFacebook, FaInstagram, FaTelegram, FaTwitter, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {

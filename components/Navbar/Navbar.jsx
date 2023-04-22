@@ -5,44 +5,6 @@ import { useRouter } from 'next/navigation';
 import { FaBars } from "react-icons/fa";
 // import logo from "./logo.png";
 // import Menu from "./Menu";
-const Navbar = ({ toggleDrawer }) => {
-
-  const router = useRouter();
-  const clickImageHandler = () => {
-    router.push("/");
-  }
-  return (
-    <SNavbar>
-      <NavContainer>
-        <DrawerButton onClick={toggleDrawer}>
-          <FaBars />
-        </DrawerButton>
-        <SNav onClick = {clickImageHandler}>BigPIP </SNav>
-        <RightNav>
-          <NavRoutes>
-        
-                <NavRoute href="faq" key="faq">
-                  Faq
-                </NavRoute>
-                <NavRoute href="aboutus" key="aboutus">
-                  About us
-                </NavRoute>
-                <NavRoute href="getstarted" key="getstarted">
-                  Get Started
-                </NavRoute>
-                <LoginButton>
-                  <NavRoute href='login'>
-                    Log in/ Sign up
-                  </NavRoute>
-                </LoginButton>
-          </NavRoutes>  
-        </RightNav>
-      </NavContainer>
-    </SNavbar>
-  );
-};
-
-export default Navbar;
 
 const DrawerButton = styled.button`
   all: unset;
@@ -126,3 +88,42 @@ const LoginButton = styled.button`
     transform: scale(1.1);
   }
 `;
+const Navbar = ({ toggleDrawer }) => {
+
+  const router = useRouter();
+  const clickImageHandler = () => {
+    router.push("/");
+  }
+  return (
+    <SNavbar>
+      <NavContainer>
+        <DrawerButton onClick={toggleDrawer}>
+          <FaBars />
+        </DrawerButton>
+        <SNav onClick = {clickImageHandler}>BigPIP </SNav>
+        <RightNav>
+          <NavRoutes>
+        
+                <NavRoute href="faq" key="faq">
+                  Faq
+                </NavRoute>
+                <NavRoute href="aboutus" key="aboutus">
+                  About us
+                </NavRoute>
+                <NavRoute href="getstarted" key="getstarted">
+                  Get Started
+                </NavRoute>
+                <LoginButton>
+                  <NavRoute href='signin'>
+                    Log in/ Sign up
+                  </NavRoute>
+                </LoginButton>
+          </NavRoutes>  
+        </RightNav>
+      </NavContainer>
+    </SNavbar>
+  );
+};
+
+export default Navbar;
+
