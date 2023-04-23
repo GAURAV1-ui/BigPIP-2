@@ -1,0 +1,109 @@
+
+.heroBackground{
+    text-align:center ;
+    color: white;
+  }
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .heroBackgroundContainer {
+    margin-top:50px;
+    height: 553px;
+    width: 1120px;
+    background: url(/HeroBackground.png);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+  }
+  
+  .HomeBackground_content {
+    line-height: 1.5;
+  }
+  
+  .HomeBackground_content_Counter {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .HomeBackground_content_Counter1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    gap: 8px;
+  }
+  
+  .HomeBackground_content_Counter2{
+    display: flex;
+    gap: 8px;
+  }
+  
+  .HomeBackground_content_text {
+    font-size: 10px;
+    line-height: 0px;
+    text-align: left;
+    margin-top: 15px;
+    margin-right: 15px;
+  }
+  
+  .HomeBackground_content_heading1{
+    font-size: 20px;
+    text-align: left;
+    line-height: 5px;
+    margin-bottom: 35px;
+  }
+  
+  .HomeBackground_content_description1 p{
+      color:#cccccc;
+      font-weight: 400;
+      margin-top:20px;
+      text-align: left;
+      line-height: 3px;
+  }
+  
+  .HomeBackground_content_button {
+    text-align: left;
+  }
+  
+  .HomeBackground_content_button button{
+    margin-top: 2rem;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    font-size: 15px;
+    background-color: whitesmoke;
+    transition: .5s all;
+  }
+  .HomeBackground_content_button button:hover{
+    background-color: black;
+    color: white;
+    transition: 0.3s all;
+    cursor: pointer;
+  }
+  
+  .HomeBackground_content_HeroImage img{
+    width: 100%;
+  }
+  
+  .card .imgTop {
+    display: none;
+    top: 10;
+    z-index: 99;
+  }
+  .card:hover .imgTop {
+    display: block;
+  }
+  .card:hover .imgTop1 {
+    display: none;
+  }
+  
+  @media screen and (max-width: 900px){
+    .card{
+      display: none;
+    }
+  } 
+  
+  
