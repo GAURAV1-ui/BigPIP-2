@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import styles from "../../styles/faq.module.css";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+import axios from 'axios';
 
+const Faq = (props) => {
 
-const ContactUs = () => {
+    console.log(props);
 
     const [selected, setSelected] = useState(null);
 
@@ -14,6 +16,14 @@ const ContactUs = () => {
 
         setSelected(i);
     };
+
+    // useEffect(() => {
+    //     axios.get("https://bigpip-cms.up.railway.app/api/FAQ")
+    //       .then((res) => {
+    //         console.log(res);
+    //       }).catch((err) => {
+    //       })
+    //   }, []);
 
     return (
         <>
@@ -30,7 +40,7 @@ const ContactUs = () => {
                     <div className={styles.faqs_container}>
                         
                         <div className={styles.accordion}>
-                            {data.map((item) => (
+                            {newdata.map((item) => (
 
                                 <div className={styles.rowOfAccordion} key={item.id} onClick={() => toggle(item.id)}>
                                     <div className={styles.questionOfAccordion}>
@@ -53,7 +63,7 @@ const ContactUs = () => {
                     <div className={styles.faqs_container}>
                         
                         <div className={styles.accordion}>
-                            {data.map((item) => (
+                            {newdata.map((item) => (
 
                                 <div className={styles.rowOfAccordion} key={item.id} onClick={() => toggle(item.id)}>
                                     <div className={styles.questionOfAccordion}>
@@ -76,7 +86,7 @@ const ContactUs = () => {
                     <div className={styles.faqs_container}>
                         
                         <div className={styles.accordion}>
-                            {data.map((item) => (
+                            {newdata.map((item) => (
 
                                 <div className={styles.rowOfAccordion} key={item.id} onClick={() => toggle(item.id)}>
                                     <div className={styles.questionOfAccordion}>
@@ -102,7 +112,7 @@ const ContactUs = () => {
 
 }
 
-const data = [
+const newdata = [
     {
         id: 1,
         question: "WHAT IS FOREX TRADING ?",
@@ -136,4 +146,11 @@ const data = [
     },
 ]
 
-export default ContactUs;
+export async function getServerSideProps() {
+    const res = await fetch(`https://bigpip-cms.up.railway.app/api/FAQ`)
+    const data = await res.json();
+  
+    return { props: { data } }
+  }
+
+export default Faq;

@@ -1,12 +1,12 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import styles from "../../styles/getstarted.module.css";
-
+import axios from 'axios';
 import { AiFillMail} from 'react-icons/ai';
 import { BsDiscord} from 'react-icons/bs';
 import { IoLogoWhatsapp} from 'react-icons/io';
 import { BsTelegram} from 'react-icons/bs';
 
-const GetStarted = () => {
+const GetStarted = (props) => {
     const [userName, setUserName] = useState("");
     const [userTel, setUserTel] = useState("");
     const [userEmail, setUserEmail] = useState("");
@@ -24,6 +24,36 @@ const GetStarted = () => {
     const onMessageChange = (event) => {
         setUserMessage(event.target.value);
     }
+
+    const onHandleSubmit = (event) => {
+      event.preventDefault();
+
+      console.log(props);
+
+      // axios({
+      //   method: 'post',
+      //   url: 'https://bigpip-cms.up.railway.app/api/get-started',
+      //   data: qs.stringify({
+          
+      //   }),
+      //   headers: {
+      //     'content-type': 'application/json'
+      //   }
+      // }).then((res) => {
+      //   const result = res.data.result;
+      //   setUserTranscribedInput(result);
+      // }).catch((err) => {
+      // })
+    }
+
+        useEffect(() => {
+        axios.get("https://bigpip-cms.up.railway.app/api/get-started")
+          .then((res) => {
+            console.log(res);
+          }).catch((err) => {
+          })
+      }, []);
+
   return (
     <>
     <div className={styles.container}>
@@ -40,7 +70,7 @@ const GetStarted = () => {
         <div className={styles.info}>
           <div className={styles.information}>
             {/* <img src="img/location.png" className={styles.icon" alt="" /> */}
-            <AiFillMail className='icon'/>
+            <AiFillMail className={styles.icon}/>
             <p>support@bigpipfunding.com</p>
           </div>
           <div className={styles.information}>
@@ -61,7 +91,7 @@ const GetStarted = () => {
       </div>
 
       <div className={styles.contact_form}>
-        <form action="">
+        <form onSubmit={onHandleSubmit}>
           <h3 className={styles.title}>Contact us</h3>
           <div className={styles.input_container}>
             <input 
@@ -107,6 +137,12 @@ const GetStarted = () => {
   </div>
   </>
   )
+}
+
+export async function getServerSideProps() {
+  const res = await fetch(`https://bigpip-cms.up.railway.app/api/get-started`)
+  const data = await res.json();
+  return { props: { data } }
 }
 
 
