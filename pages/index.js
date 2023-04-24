@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/herosection.module.css";
 import { useRouter } from 'next/navigation';
 import Image from "next/image";
+import ChallengeObjective from '../components/ChallengeObjective';
+import Plan from "@/components/Plan";
+import GetbibCard from "@/components/GetbibCard";
 
 export default function Home() {
 
@@ -88,6 +91,9 @@ export default function Home() {
         </div>
       </div>
       </div>
+    <GetbibCard/>
+    <Plan/>
+    <ChallengeObjective/>
     </main>
   )
 }

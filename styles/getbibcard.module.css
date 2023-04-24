@@ -1,0 +1,126 @@
+.getbib {
+    background-color: #002D16;
+    padding: 2rem;
+    
+}
+
+.getbibCardPip h1 {
+    font-size: 55px;
+    font-family: sora, 'serif';
+    font-weight: 700;
+}
+.getbibCardPip p{
+    font-size: 18px;
+    margin-top: -20px;
+}
+
+.getbibCard_Container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 3rem 6rem;
+}
+.getbibCard_Container1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 4rem 6rem;
+    
+}
+
+.getbibCard {
+    width: 300px;
+    border: 1px solid #4CF422;
+    background-color:#0F450A;
+    border-radius: 20px;
+    margin: 40px;
+    transition: 0.3s all;
+
+}
+.getbibCard:hover{
+    background-color: #2b990f;
+    transition: 0.3s all;
+    cursor: pointer;
+    border-color: #0F450A;
+}
+
+.getbibCard h2{
+    margin-bottom: -10px;
+}
+.getbibCard p {
+    padding: 20px 40px;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.getbibCard img {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50px;
+    padding: 20px;
+    margin-top: -2rem;
+}.getbib {
+    background-color: #002D16;
+    padding: 2rem;
+}
+
+.getbibCardPip h1 {
+    font-size: 55px;
+    font-family: sora, 'serif';
+    font-weight: 700;
+}
+.getbibCardPip p{
+    font-size: 18px;
+    margin-top: -20px;
+}
+
+.getbibCard_Container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 3rem 6rem;
+}
+.getbibCard_Container1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 4rem 6rem;
+}
+
+.getbibCard {
+    width: 300px;
+    border: 1px solid #4CF422;
+    background-color:#0F450A;
+    border-radius: 20px;
+    margin: 40px;
+    /* margin-bottom: 0px; */
+    transition: 0.3s all;
+
+}
+.getbibCard:hover{
+    background-color: #2b990f;
+    transition: 0.3s all;
+    cursor: pointer;
+    border-color: #0F450A;
+}
+
+.getbibCard h2{
+    margin-bottom: -10px;
+}
+.getbibCard p {
+    padding: 20px 40px;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.getbibCard img {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50px;
+    padding: 20px;
+    margin-top: -2rem;
+}

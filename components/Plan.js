@@ -1,0 +1,89 @@
+import { useState } from 'react';
+import styles from '../styles/plan.module.css';
+
+const Plan = () => {
+    const [showOneStep, setShowOneStep] = useState(true);
+    const [showStandard, setShowStandard] = useState(false);
+
+    const toggleAccountType = () => {
+        setShowOneStep((showOneStep) => !showOneStep);
+        setShowStandard((showStandard) => !showStandard);
+    }
+
+    return (
+        <div className={styles.plan}>
+            <div className={styles.plan_content}>
+                <h3 className={styles.plan_content_h}>Choose your Account Type</h3>
+                <p className={styles.plan_content_p}>BigPIP Funding offers over 14 different plans to choose from. Assess your skills and choose the right ones for yourself</p>
+                <div className={styles.plan_content_btns}>
+                <button className={showOneStep ? styles.plan_content_btns_onestep : styles.plan_content_btns_standard} onClick={() => toggleAccountType()}>1-Step Evaluation</button>
+                <button className={showOneStep ? styles.plan_content_btns_standard : styles.plan_content_btns_onestep} onClick={() => toggleAccountType()}>Standard Evaluation</button>
+                </div>
+                <div className={styles.plan_content_tables}>
+                    {showOneStep && <div className={styles.plan_content_tables_grid_onestep}>
+                        <div className={styles.header_1}>1-Step Evaluation</div>
+                        <div className={styles.header_2}>$10,000</div>
+                        <div className={styles.header_3}>$10,000</div>
+                        <div className={styles.header_4}>$10,000</div>
+                        <div className={styles.header_5}>$10,000</div>
+                        <div className={styles.target}>Target</div>
+                        <div className={styles.target_value}>Phase | Target: 10%</div>
+                        <div className={styles.min_trade}>Minimum Trading Days</div>
+                        <div className={styles.min_trade_days}>5 Days</div>
+                        <div className={styles.max_trade}>Maximum Trading Days</div>
+                        <div className={styles.max_trade_days}>Unlimited</div>
+                        <div className={styles.leverage}>Available Leverage</div>
+                        <div className={styles.leverage_value}>1:100</div>
+                        <div className={styles.profit}>Profit Split</div>
+                        <div className={styles.profit_value}>70%</div>
+                        <div className={styles.refund}>Refundable Registration Fee</div>
+                        <div className={styles.refund_value_1}>$99</div>
+                        <div className={styles.refund_value_2}>$189</div>
+                        <div className={styles.refund_value_3}>$399</div>
+                        <div className={styles.refund_value_4}>$749</div>
+                        <div className={styles.plan_area}>Plan</div>
+                        <div className={styles.plan_btn_1}><button>Choose Plan</button></div>
+                        <div className={styles.plan_btn_2}><button>Choose Plan</button></div>
+                        <div className={styles.plan_btn_3}><button>Choose Plan</button></div>
+                        <div className={styles.plan_btn_4}><button>Choose Plan</button></div>
+                    </div>}
+                    {showStandard && <div className={styles.plan_content_tables_grid_standard}>
+                        <div className={styles.header_1}>1-Step Evaluation</div>
+                        <div className={styles.header_2}>$25,000</div>
+                        <div className={styles.header_3}>$50,000</div>
+                        <div className={styles.header_4}>$100,000</div>
+                        <div className={styles.header_5}>$200,000</div>
+                        <div className={styles.header_6}>$500,000</div>
+                        <div className={styles.header_7}>$800,000</div>
+                        <div className={styles.target}>Target</div>
+                        <div className={styles.target_value}>Phase | Target: 10%</div>
+                        <div className={styles.min_trade}>Minimum Trading Days</div>
+                        <div className={styles.min_trade_days}>2 Days</div>
+                        <div className={styles.max_trade}>Maximum Trading Days</div>
+                        <div className={styles.max_trade_days}>Unlimited</div>
+                        <div className={styles.leverage}>Available Leverage</div>
+                        <div className={styles.leverage_value}>1:200</div>
+                        <div className={styles.profit}>Profit Split</div>
+                        <div className={styles.profit_value}>80%</div>
+                        <div className={styles.refund}>Refundable Registration Fee</div>
+                        <div className={styles.refund_value_1}>$199</div>
+                        <div className={styles.refund_value_2}>$299</div>
+                        <div className={styles.refund_value_3}>$499</div>
+                        <div className={styles.refund_value_4}>$949</div>
+                        <div className={styles.refund_value_5}>$2199</div>
+                        <div className={styles.refund_value_6}>$3499</div>
+                        <div className={styles.plan_area}>Plan</div>
+                        <div className={styles.plan_btn_1}><button>Choose Plan</button></div>
+                        <div className={styles.plan_btn_2}><button>Choose Plan</button></div>
+                        <div className={styles.plan_btn_3}><button>Choose Plan</button></div>
+                        <div className={styles.plan_btn_4}><button>Choose Plan</button></div>
+                        <div className={styles.plan_btn_5}><button>Choose Plan</button></div>
+                        <div className={styles.plan_btn_6}><button>Choose Plan</button></div>
+                    </div>}
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Plan;
