@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 import Head from "next/head";
 // import { Provider } from "react-redux";
 import Navigation from '../components/Navbar/Navigation';
+import Footer from '@/components/Footer/Footer';
 // import Footer from '../components/Footer/Footer';
 
 export default function App({ Component, pageProps }) {
@@ -33,6 +34,7 @@ export default function App({ Component, pageProps }) {
             {/* <Provider> */}
               <Navigation/>
               <Component {...pageProps} />
+              <Footer/>
               {/* <Footer/> */}
             {/* </Provider> */}
     </>

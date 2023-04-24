@@ -10,7 +10,7 @@ import Link from "next/link";
 const Backdrop = styled.div`
   height: 100%;
   width: 100%;
-  z-index: 100;
+  z-index: 1000;
   position: absolute;
   top: 0;
   left: 0;
@@ -18,7 +18,7 @@ const Backdrop = styled.div`
   background-color: rgba(0, 0, 0, 0.2);
 `;
 const SDrawer = styled.div`
-  z-index: 150;
+  z-index: 1000;
   position: absolute;
   top: 0;
   height: 100vh;
@@ -30,6 +30,7 @@ const SDrawer = styled.div`
 `;
 
 const RightNav = styled.div`
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -39,6 +40,7 @@ const RightNav = styled.div`
 const NavRoutes = styled.div``;
 const NavRoute = styled.li`
   display: flex;
+  z-index: 1000;
   text-decoration: none;
   color: black;
   font-size: 20px;
