@@ -51,7 +51,7 @@
   .HomeBackground_content_heading1{
     font-size: 20px;
     text-align: left;
-    line-height: 5px;
+    line-height: 15px;
     margin-bottom: 35px;
   }
   
@@ -101,9 +101,26 @@
   }
   
   @media screen and (max-width: 900px){
-    .card{
+    /* .heroBackgroundContainer {
+      margin-top:50px;
+      height: 700px;
+      width: 600px;
+      border-radius: 2rem;
+      margin-bottom: 2rem;
+    } */
+    /* .card{
       display: none;
-    }
+    } */
   } 
+
+  @media screen and (max-width: 600px){
+    .heroBackgroundContainer {
+      margin-top:50px;
+      height: 350px;
+      width: 350px;
+      border-radius: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
   
   

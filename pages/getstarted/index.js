@@ -28,11 +28,11 @@ const GetStarted = (props) => {
     const onHandleSubmit = (event) => {
       event.preventDefault();
 
-      console.log(props);
+      // console.log(props.data);
 
       // axios({
       //   method: 'post',
-      //   url: 'https://bigpip-cms.up.railway.app/api/get-started',
+      //   url: 'https://bigpip-cms.up.railway.app/api/get-startedhttps://bigpip-cms.up.railway.app/api/get-started?populate=*',
       //   data: qs.stringify({
           
       //   }),
@@ -46,20 +46,20 @@ const GetStarted = (props) => {
       // })
     }
 
-        useEffect(() => {
-        axios.get("https://bigpip-cms.up.railway.app/api/get-started")
-          .then((res) => {
-            console.log(res);
-          }).catch((err) => {
-          })
-      }, []);
+      //   useEffect(() => {
+      //   axios.get("https://bigpip-cms.up.railway.app/api/get-started")
+      //     .then((res) => {
+      //       console.log(res);
+      //     }).catch((err) => {
+      //     })
+      // }, []);
 
   return (
     <>
     <div className={styles.container}>
     <div className={styles.form}>
       <div className={styles.contact_info}>
-        <h1 className={styles.title}>We Love To Help</h1>
+        <h1 className={styles.title}>{props.data.data.attributes.title}</h1>
         <p className={styles.text}>
         Our customers enjoy a high level of customer service through our personal and truly international approach. We are always available to help you.
         </p>
@@ -69,7 +69,6 @@ const GetStarted = (props) => {
 
         <div className={styles.info}>
           <div className={styles.information}>
-            {/* <img src="img/location.png" className={styles.icon" alt="" /> */}
             <AiFillMail className={styles.icon}/>
             <p>support@bigpipfunding.com</p>
           </div>
@@ -78,12 +77,10 @@ const GetStarted = (props) => {
             <p>Telegram</p>
           </div>
           <div className={styles.information}>
-            {/* <img src="img/phone.png" className={styles.icon" alt="" /> */}
             <IoLogoWhatsapp className={styles.icon}/>
             <p>WhatsApp</p>
           </div>
           <div className={styles.information}>
-            {/* <img src="img/phone.png" className={styles.icon" alt="" /> */}
             <BsDiscord className={styles.icon}/>
             <p>Discord</p>
           </div>
@@ -140,8 +137,9 @@ const GetStarted = (props) => {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`https://bigpip-cms.up.railway.app/api/get-started`)
+  const res = await fetch(`https://bigpip-cms.up.railway.app/api/get-started?populate=*`)
   const data = await res.json();
+  // console.log(data);
   return { props: { data } }
 }
 
