@@ -5,6 +5,7 @@ import Image from "next/image";
 import ChallengeObjective from '../components/ChallengeObjective';
 import Plan from "@/components/Plan";
 import GetbibCard from "@/components/GetbibCard";
+import GetFund from "@/components/GetFund";
 
 export default function Home() {
 
@@ -91,6 +92,7 @@ export default function Home() {
         </div>
       </div>
       </div>
+      <GetFund/>
     <GetbibCard/>
     <Plan/>
     <ChallengeObjective/>
