@@ -1,7 +1,5 @@
 .aboutus {
-    width: 75%;
-    margin: 0 auto;
-    padding: 1rem;
+    margin: 4rem 8rem;
 }
 
 .aboutus_header {
@@ -15,8 +13,7 @@
     font-size: 2rem;
     font-weight: 500;
     color: #fff;
-    margin: 0;
-    margin-left: 3rem;
+    margin-left: 2.5rem;
 }
 
 .aboutus_header_images {
@@ -45,4 +42,17 @@
 
 .aboutus_content_section_content p{
     font-size: 1rem;
+}
+
+@media (max-width: 850px) {
+    .aboutus {
+        margin: 4rem 2rem;
+    }
+    .aboutus_heading {
+        font-size: 1rem;
+        margin: 1rem;
+    }
+
+
+    
 }
