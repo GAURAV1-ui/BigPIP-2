@@ -15,12 +15,12 @@ const GetFund = () => {
         
         <div className={styles.getFundCardArrow}>
                     {/* <div className={styles.getFundCardArrow1}> */}
-                    <Image src="/ArrowVector2.svg" alt="/" width={100} height={100}/>
+                    <Image src="/ArrowVector2.svg" alt="/" width={70} height={70}/>
                     {/* <img src= {Arrow2}/> */}
                     <h1>-------------</h1>
                     {/* </div> */}
                     {/* <div className={styles.getFundCardArrow2}> */}
-                    <Image src="/ArrowVector2.svg" alt="/" width={100} height={100}/>
+                    <Image src="/ArrowVector2.svg" alt="/" width={70} height={70}/>
                     {/* <img src = {Arrow2} className={styles.getFundCardArrow2}/> */}
                     <h1>----------</h1>
                     {/* </div> */}

@@ -1,11 +1,11 @@
 .getFundCardArrow {
   display: flex;
-  margin-left: 16rem;
+  margin-left: 14rem;
   margin-bottom: -5rem;
 }
 
 .getFundCardArrow img{
-  margin-bottom: -1rem;
+  margin-bottom: -5rem;
 }
 
 .getFundCardArrow h1 {
@@ -20,6 +20,11 @@
   text-align: left;
   margin-left: 11rem;
 }
+.getFundContainer{
+  max-width: 1450px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .getFund h1{
   font-family: 'Sora', sans-serif;
@@ -27,7 +32,7 @@
   font-size: 48px;
   font-weight: 600;
   /* margin-left: -32rem; */
-  /* margin-top: 8rem; */
+  margin-top: 6rem;
 }
 
 .getFund p {
@@ -39,7 +44,7 @@
   width: 42%;
   /* line-height: 20px; */
   /* width: 600px; */
-  /* margin-top: -25px; */
+  margin-top: -25px;
   /* margin-left: 11rem; */
   /* text-align: left; */
 }

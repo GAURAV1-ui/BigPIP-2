@@ -3,6 +3,7 @@ import Head from "next/head";
 // import { Provider } from "react-redux";
 import Navigation from '../components/Navbar/Navigation';
 import Footer from '@/components/Footer/Footer';
+import '../styles/globals.css';
 // import Footer from '../components/Footer/Footer';
 
 export default function App({ Component, pageProps }) {
