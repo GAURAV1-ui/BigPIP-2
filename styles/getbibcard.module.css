@@ -1,100 +1,42 @@
 .getbib {
     background-color: #002D16;
-    padding: 2rem;
+    padding: 2rem 1rem;
     
 }
 
 .getbibCardPip h1 {
-    font-size: 55px;
+    font-size: 1.5rem;
     font-weight: 700;
-}
-.getbibCardPip p{
-    font-size: 18px;
-    margin-top: -20px;
-}
-
-.getbibCard_Container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 3rem 6rem;
-}
-.getbibCard_Container1{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 4rem 6rem;
-    
-}
-
-.getbibCard {
-    width: 300px;
-    border: 1px solid #4CF422;
-    background-color:#0F450A;
-    border-radius: 20px;
-    margin: 40px;
-    transition: 0.3s all;
-
-}
-.getbibCard:hover{
-    background-color: #2b990f;
-    transition: 0.3s all;
-    cursor: pointer;
-    border-color: #0F450A;
-}
-
-.getbibCard h2{
     text-align: center;
     color: white;
-    margin-bottom: -10px;
-}
-.getbibCard p {
-    padding: 20px 40px;
-    font-size: 16px;
-    font-weight: 300;
-    margin-bottom: 30px;
-    color: white;
-}
-
-.getbibCard img {
-    width: 30px;
-    height: 30px;
-    background-color: white;
-    border-radius: 50px;
-    
-    padding: 20px;
-    margin-top: -2rem;
-}
-
-.getbib {
-    background-color: #002D16;
-    padding: 2rem;
-}
-
-.getbibCardPip h1 {
-    font-size: 55px;
-    font-family: sora, 'serif';
-    font-weight: 700;
-    color: white;
-
 }
 .getbibCardPip p{
     color: white;
-    font-size: 18px;
-    margin-top: -20px;
+    font-size: 16px;
+    line-height: 18px;
+    width: 40%;
+    margin-right: auto;
+    margin-left: auto;
+    /* padding: 0 20px; */
+    /* margin-top: -20px; */
+    text-align: center;
 }
 
 .getbibCard_Container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 3rem 6rem;
+    padding: 3rem 2rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .getbibCard_Container1{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 4rem 6rem;
+    
 }
 
 .getbibCard {
@@ -103,9 +45,10 @@
     background-color:#0F450A;
     border-radius: 20px;
     margin: 40px;
-    /* margin-bottom: 0px; */
+    
     transition: 0.3s all;
-
+    text-align: center;
+    
 }
 .getbibCard:hover{
     background-color: #2b990f;
@@ -115,20 +58,37 @@
 }
 
 .getbibCard h2{
+    font-size: 20px;
+    color: white;
     margin-bottom: -10px;
 }
 .getbibCard p {
-    padding: 20px 40px;
-    font-size: 16px;
+    padding: 20px 30px;
+    font-size: 14px;
     font-weight: 300;
     margin-bottom: 30px;
+    color: white;
+    line-height: 18px;
 }
 
 .getbibCard img {
-    width: 30px;
-    height: 30px;
     background-color: white;
-    border-radius: 50px;
+    border-radius: 50px; 
     padding: 20px;
     margin-top: -2rem;
+}
+
+
+@media screen and (max-width: 748px){
+    .getbibCard_Container{
+        padding: 0;
+        margin:2rem 0;
+    }
+    .getbibCardPip h1 {
+        font-size: 1.3rem;
+    }
+    .getbibCardPip p {
+        font-size: 12px;
+        width: 75%;
+  }
 }

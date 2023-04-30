@@ -93,8 +93,8 @@ export default function Home() {
       </div>
       </div>
       <GetFund/>
-    <GetbibCard/>
-    {/* <Plan/> */}
+      <GetbibCard/>
+    <Plan/>
     <ChallengeObjective/>
     </main>
   )

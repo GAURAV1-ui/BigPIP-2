@@ -13,11 +13,11 @@ const GetbibCard = () => {
       <div className={styles.getbib}>
         <div className={styles.getbibCardPip}>
           <h1>Why traders choose BigPIP ?</h1>
-          <p>Join us for trading success with a leading prop trading firm,</p>
-          <p style={{ marginTop: "-1.2rem" }}>
-            {" "}
-            investing in innovative tech for an optimal trading experience.
-          </p>
+          <p>Join us for trading success with a leading prop trading firm,investing in innovative tech for an optimal trading experience.</p>
+          {/* <p style={{ marginTop: "-1.2rem" }}> */}
+            {/* {" "} */}
+            
+          {/* </p> */}
         </div>
         <div className={styles.getbibCard_Container}>
           <div className={styles.getbibCard}>
@@ -37,7 +37,7 @@ const GetbibCard = () => {
             </p>
           </div>
           <div className={styles.getbibCard}>
-          <Image src="/infinte.svg" alt="/" width={100} height={100}/>
+          <Image src="/infinite.svg" alt="/" width={100} height={100}/>
             <h2>24/7 Customer Service</h2>
             <p>
               Our customer service is available 24/7, providing round-the-clock
@@ -53,7 +53,7 @@ const GetbibCard = () => {
               </p>
             </div>
             <div className={styles.getbibCard}>
-              <img src="/clock.svg" alt="/" width={100} height={100}/>
+              <Image src="/clock.svg" alt="/" width={100} height={100}/>
               <h2>Trade Upto $5million</h2>
               <p>
                 Unlock the potential to trade up to 5 million dollars and expand

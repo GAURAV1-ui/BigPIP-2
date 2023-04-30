@@ -3,20 +3,25 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    /* padding-left:6rem; */
+    /* margin-left:4rem; */
   }
   
   .plan_content_h {
-    font-family: sora, serif;
     color: #0c3a08;
-    font-size: 3rem;
+    font-size: 40px;
     margin-bottom: 0.7rem;
+    text-align: center;
   }
   .plan_content_p {
     color: #0c3a08;
-    width: 60%;
+    width: 70%;
     font-weight: 500;
-    font-size: 1rem;
-    margin: 0 auto 0.3rem;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .plan_content_btns {
@@ -42,7 +47,9 @@
     background: #0a3100;
     padding: 1rem;
     width: 40%;
+
     border-radius: 1rem;
+    
   }
   
   .plan_content_btns_standard {
@@ -53,6 +60,7 @@
     background: #fff;
     padding: 1rem;
     border-radius: 1rem;
+    
   }
   
   .header_1 {
@@ -227,7 +235,7 @@
       "profit profit_value profit_value profit_value profit_value profit_value profit_value"
       "refund refund_value_1 refund_value_2 refund_value_3 refund_value_4 refund_value_5 refund_value_6"
       "plan_area plan_btn_1 plan_btn_2 plan_btn_3 plan_btn_4 plan_btn_5 plan_btn_6";
-    margin: 2rem 0;
+    margin: 1rem 0;
     border: 2px solid #000;
     border-radius: 1rem;
     overflow: hidden;
@@ -235,5 +243,26 @@
   
   .plan_content_tables_grid_onestep div, .plan_content_tables_grid_standard div {
     padding: 0.8rem;
+  }
+
+  @media screen and (max-width: 748px){
+    .plan_content_h{
+      font-size: 1.3rem;
+    }
+    .plan_content_p {
+      font-size: 12px;
+      line-height: 15px;
+    }
+    .plan_content_btns {
+      gap: 2rem;
+    }
+    
+    .plan_content_btns button {
+      margin-top: 1.5rem;
+      width: 35%;
+      font-size: 10px;
+      padding: 0.7rem;
+    }
+
   }
   
