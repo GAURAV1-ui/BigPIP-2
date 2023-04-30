@@ -94,7 +94,7 @@ export default function Home() {
       </div>
       <GetFund/>
     <GetbibCard/>
-    <Plan/>
+    {/* <Plan/> */}
     <ChallengeObjective/>
     </main>
   )

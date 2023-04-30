@@ -40,7 +40,7 @@ const GetFund = () => {
             </div>
             <div className={styles.getFundCard3}>
                 {/* <img src = {logo} alt = "" style ={{backgroundColor: "white", borderRadius: "20px", padding: "8px", marginTop: "3rem "}}/> */}
-                <Image src="/logo.png" alt="/" width={100} height={100}/>
+                <Image src="/logo.png" alt="/" width={220} height={35}/>
                 <p>Now you are a BigPIP trader, trade responsibly and consistently to earn up to 85% of your profits. Consistent profits may lead to account scaling through our Scaling Plan, increasing your potential earnings.</p>
                 <button>Earn Real Money</button>
             </div>

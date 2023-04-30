@@ -1,11 +1,11 @@
 .getFundCardArrow {
   display: flex;
   margin-left: 14rem;
-  margin-bottom: -5rem;
+  margin-bottom: -6rem;
 }
 
 .getFundCardArrow img{
-  margin-bottom: -5rem;
+  margin-top: 2rem;
 }
 
 .getFundCardArrow h1 {
@@ -21,7 +21,7 @@
   margin-left: 11rem;
 }
 .getFundContainer{
-  max-width: 1450px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -41,7 +41,7 @@
   border-radius: 10px;
   color: black;
   font-size: 16px;
-  width: 42%;
+  width: 55%;
   /* line-height: 20px; */
   /* width: 600px; */
   margin-top: -25px;
@@ -51,33 +51,36 @@
 
 .getFundCard {
   display: flex;
-  flex: 0 0 auto;
   flex-wrap: wrap;
   margin: 6rem;
   justify-content: space-around; 
 }
 .getFundCard1 {
-  width: 250px;
+  width: 300px;
   height: 230px;
   background-color: #0C3901;
   border-radius: 15px;
   padding: 15px;
   transition: 0.5s all;
+  text-align: center;
 }
 
 .getFundCard1 h3{
   color: white;
+  
 }
 
 .getFundCard1 p {
-  font-size: 14px;
+  color: white;
+  line-height: 18px;
+  font-size: 12px;
   padding: 0 15px;
 }
 
 .getFundCard1 button{
   padding: 10px 30px;
   border-radius: 10px;
-  margin: 10px 0;
+  margin: 20px 0 10px 0;
   font-weight: 700;
   font-size: 15px;
   transition: 0.3s all;
@@ -92,18 +95,21 @@
 }
 
 .getFundCard2 {
-  width: 250px;
+  width: 300px;
   height: 230px;
   border-radius: 15px;
   padding: 15px;
+  color: white;
   background-color: #B7B7B7;
   animation: background-fade 4s forwards;
+  text-align: center;
   /* transition-delay: 2s ; */
 }
 
 @keyframes background-fade {
   99.99% {
       background:#1d5110;
+      
   }
   100% {
       background:#0C3901;
@@ -114,13 +120,16 @@
 
 } */
 
-.getFundCard2 h3{
-  color: white;
-}
+/* .getFundCard2 Image{
+  background-color: white;
+} */
 
 .getFundCard2 p {
-  font-size: 14px;
+  color: white;
+  line-height: 18px;
+  font-size: 12px;
   padding: 0 15px;
+  
 }
 
 .getFundCard2 button{
@@ -148,18 +157,27 @@
   animation: background-fade 6s forwards;
   padding: 15px;
   margin-top: -8.5rem;
+  text-align: center;
   /* margin-left: 50px; */
 }
 
-
+.getFundCard3 img{
+  margin-top: 3rem;
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-bottom: 1rem;
+}
 .getFundCard3 p {
-  font-size: 14px;
-  padding: 15px 15px;
+  color: white;
+  line-height: 18px;
+  font-size: 12px;
+  padding: 0 15px;
 }
 
 .getFundCard3 button{
   position: relative;
-  bottom:-30px;
+  bottom:-25px;
   padding: 10px 30px;
   border-radius: 10px;
   margin: 10px 0;
@@ -176,12 +194,15 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 1200px){
   .getFundCardArrow{
     display: none;
   }
   .getFund {
       margin: 0rem;
+  }
+  .getFundCard{
+    margin: 1rem;
   }
   .getFund h1{
       text-align: center;
@@ -191,7 +212,58 @@
   .getFund p{
       text-align: center;
       font-size: 16px;
-      width: 80%;
-      padding: 0 2rem;
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 1.2rem 0;
+  }
+  .getFundCard1{
+    height: 280px;
+  }
+  .getFundCard1 button{
+    position: relative;
+    bottom: -50px;
+  }
+  .getFundCard2{
+    height: 280px;
+  }
+  .getFundCard2 button{
+    position: relative;
+    bottom: -60px;
+  }
+  .getFundCard3 {
+    width: 300px;
+    height: 280px;
+    margin-top: 0;
+  }
+  .getFundCard3 button{
+    bottom: 0;
+  }
+  .getFundCard3 img{
+    margin-top: 1rem;
+    margin-bottom: 0.1rem;
   }
 } 
+
+@media screen and (max-width: 960px){
+  .getFundCard1{
+    margin-bottom: 2rem;
+    width: 320px;
+  }
+  .getFundCard2{
+    margin-bottom: 2rem;
+    width: 320px;
+  }
+  .getFundCard3{
+    width: 320px;
+  }
+  .getFund{
+    margin: 0px;
+  }
+}
+@media screen and (max-width: 748px){
+  .getFund p{
+    width: 80%;
+    font-size: 11px;
+  }
+}

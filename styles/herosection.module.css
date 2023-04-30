@@ -100,7 +100,7 @@
     display: none;
   }
   
-  @media screen and (max-width: 900px){
+  @media screen and (max-width: 1200px){
     .heroBackgroundContainer {
       margin-top:50px;
       height: 700px;
