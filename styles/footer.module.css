@@ -1,29 +1,33 @@
 .footer {
-    width: 100%;
     background: black;
-    display: block;
     }
     
     .inner_footer {
-     width: 89%;
+     max-width: 1200px;
      margin: auto;
-     padding: 30px 10px;
+     padding: 30px;
      display: flex;
      flex-wrap: wrap;
-     box-sizing: border-box;
-     justify-content: center;
+     justify-content:space-between;
     }
     
     .footer_items {
-    width: 33%;
-    padding: 10px 20px;
-    box-sizing: border-box;
+    padding: 10px 10px;
     color: #fff;
+    }
+    .footer_item{
+      width: 45%;
+    }
+    .footer_items1{
+      display: flex;
+      justify-content: space-between;
+      width: 55%;
     }
     
     .footer_items p {
     font-size: 16px;
-    text-align: left;
+    /* text-align: left; */
+    padding-right: 50px;
     line-height: 25px;
     color: #fff;
     }
@@ -38,6 +42,7 @@
     color: #fff;
     font-size: 15px;
     letter-spacing: 0.5px;	
+    /* text-align: left; */
     }
     
     .footer_items ul a {
@@ -45,6 +50,7 @@
     outline: none;
     color: #fff;
     transition: 0.3s;
+    /* text-align: left; */
     }
     
     .footer_items ul a:hover {
@@ -56,10 +62,16 @@
     height: 25px;
     }
     
-    .footer_items li i {
-    margin-right: 20px;
+    .footer_icon{
+      display: flex;
     }
-    
+    .footer_icon a{
+      margin-right: 1rem;
+    }
+    /* .footer_items li i {
+    margin-right: 20px;
+    } */
+/*     
     .social_media {
     width: 100%;
     color: #fff;
@@ -81,7 +93,7 @@
     
     .social_media i:hover {
     transform: scale(1.5);
-    }
+    } */
     
     .footer_bottom {
     padding: 10px;
@@ -93,16 +105,26 @@
     
     /* for tablet mode view */
     
-    @media screen and (max-width: 1275px) {
+    /* @media screen and (max-width: 1275px) {
     .footer_items {
       width: 50%;
     }
-    }
+    } */
     
     /* for mobile screen view */
     
-    @media screen and (max-width: 660px) {
-    .footer_items {
-      width: 100%;
-    }
+    @media screen and (max-width: 900px) {
+      .inner_footer {
+        display: flex;
+        flex-direction: column;
+      }
+      .footer_item{
+        width: 100%;
+        margin-bottom:2rem ;
+      }
+      .footer_items1{
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+      }
     }

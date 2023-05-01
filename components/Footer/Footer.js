@@ -7,16 +7,18 @@ const Footer = () => {
   return (
     <div className={styles.footer}>
       <div className={styles.inner_footer}>
+        <div className={styles.footer_item}>
         <div className={styles.footer_items} style={{textAlign:'left'}}>
           <h1>About Us</h1>
           <p>
           We are a group of experienced traders and investors who have come together to form a dynamic and innovative trading firm. Our team consists of individuals with diverse backgrounds and expertise, ranging from quantitative analysis to market analysis and execution.
           </p>
         </div>
-
-        <div className={styles.footer_items} style={{textAlign:'right'}}>
+        </div>
+        <div className={styles.footer_items1}>
+        <div className={styles.footer_items} style={{textAlign:'left'}}>
           <h3>Quick Links</h3>
-          <ul>
+          <ul className={styles.footer_items_ul}>
             <Link href="/">
               <li>Home</li>
             </Link>
@@ -50,25 +52,25 @@ const Footer = () => {
           </ul>
         </div> */}
 
-        <div className={styles.footer_items} style={{textAlign:'right'}}>
+        <div className={styles.footer_items} style={{textAlign:'left'}}>
           <h3>Contact us</h3>
           <ul>
-            <li>+1 202 249 5667</li>
+            <li>+12022495667</li>
             <li>support@bigpipfunding.com</li>
-            <li>
+            <li className={styles.footer_icon}>
               <Link href="https://api.whatsapp.com/send/?phone=12022495667&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer">
                 <IconContext.Provider value={{ color: "white", size: '20px'}}>
-                  <FaWhatsapp style={{ marginRight: "1rem" }} />
+                  <FaWhatsapp/>
                 </IconContext.Provider>
               </Link>
               <Link href="https://discord.com/invite/zDXyV5ACUm" target="_blank" rel="noreferrer">
                 <IconContext.Provider value={{ color: "white", size: '20px'}}>
-                  <FaDiscord style={{ marginRight: "1rem" }} />
+                  <FaDiscord  />
                 </IconContext.Provider>
               </Link>
               <Link href="https://www.instagram.com/bigpipfunding/?igshid=MDM4ZDc5MmU%3D" target="_blank" rel="noreferrer">
                 <IconContext.Provider value={{ color: "white", size: '20px'}}>
-                  <FaInstagram style={{ marginRight: "1rem" }} />
+                  <FaInstagram />
                 </IconContext.Provider>
               </Link>
               <Link href="https://t.me/bigpipfunding" target="_blank" rel="noreferrer">
@@ -79,6 +81,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
+      </div>
       </div>
       <div className={styles.footer_bottom}>
         <p>© 2023 BigPip Funding. All Rights Reserved.</p>

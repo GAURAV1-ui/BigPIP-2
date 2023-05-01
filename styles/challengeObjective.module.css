@@ -15,8 +15,8 @@
   }
   
   .objective_content_h {
-    font-family: sora, serif;
-    font-size: 4rem;
+
+    font-size: 3rem;
     margin-bottom: 0.3em;
   }
   
@@ -118,11 +118,13 @@
       font-size: 0.8rem;
       width: 80%;
     }
-    .objective_content_p {
-      font-size: 0.8rem;
-    }
+
     .objective_content_card_heading p {
       font-size: 0.6rem;
+    }
+    .Challengeobjective_content_p{
+      font-size: 11px;
+      padding: 1px 10px;
     }
   }
   
