@@ -52,7 +52,9 @@
         font-size: 1rem;
         margin: 1rem;
     }
-
+    .aboutus_header_images {
+        display: none;
+    }
 
     
 }
