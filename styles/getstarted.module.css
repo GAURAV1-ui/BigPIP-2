@@ -221,16 +221,23 @@
   
   @media (max-width: 480px) {
     .container {
-      padding: 1.5rem;
+      padding: 1.2rem;
     }
   
     .contact_info:before {
       display: none;
     }
+    .contact_info {
+      padding: 0.1rem 2.2rem;
+    }
   
     .contact_form form,
     .contact-info {
       padding: 1rem 1.6rem;
+    }
+
+    .information {
+      margin-top: -0.8rem;
     }
   
     .text,
