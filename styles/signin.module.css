@@ -81,7 +81,7 @@ input[type=password]::-ms-clear
 
 .signin_form_input_field {
     margin-top: 0.2rem;
-    width: 92%;
+    width: 100%;
     padding: 1rem;
     border: 0.559028px solid #666;
     border-radius: 0.6rem;
@@ -91,7 +91,7 @@ input[type=password]::-ms-clear
 .signin_input_button {
     width: 50%;
     cursor: pointer;
-    padding: 1rem;
+    padding: 0.7rem 1rem;
     margin-top: 1.3rem;
     border: 0.559028px solid #666;
     border-radius: 2rem;
@@ -103,4 +103,32 @@ input[type=password]::-ms-clear
 .signin_input_button:hover {
     background: #fff;
     color: #333;
+}
+@media screen and (max-width: 1200px){
+    .signin_img img{
+        width: 250px;
+    }
+}
+@media screen and (max-width: 900px){
+    .signin_img img{
+       display: none;
+    }
+    .sigin_form{
+        width: 100%;
+        padding: 1.5rem;
+        
+    }
+    .signin_img{
+        width: 0;
+    }
+   
+    .signin_content {
+        width: 85%;
+    }
+    .signin_input_button {
+        width: 100%;
+    }
+    .signin_form_heading {
+        text-align: center;
+    }
 }

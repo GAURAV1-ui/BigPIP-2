@@ -4,9 +4,9 @@ import Link from "next/link";
 
 // import ExpandMenu from "./ExpandMenu";
 
-// const SNavbarBrand = styled.h2`
-//   font-size: 3rem;
-// `;
+const SNavbarBrand = styled.h2`
+  font-size: 2.5rem;
+`;
 const Backdrop = styled.div`
   height: 100%;
   width: 100%;
@@ -22,7 +22,7 @@ const SDrawer = styled.div`
   position: absolute;
   top: 0;
   height: 100vh;
-  width: 50%;
+  width: 60%;
   background-color: white;
   transition: 0.3s ease;
   // margin-top:5rem;
@@ -33,12 +33,12 @@ const RightNav = styled.div`
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 1rem;
-  margin-top: 20px
+  gap: 1rem;
+  padding: 0.1rem 1.5rem;
+  // margin-top: 20px
 `;
 const NavRoutes = styled.div``;
-const NavRoute = styled.li`
+const NavRoute = styled(Link)`
   display: flex;
   z-index: 1000;
   text-decoration: none;
@@ -48,7 +48,7 @@ const NavRoute = styled.li`
 `;
 
 const LoginButton = styled.button`
-  padding: 0.7rem 3rem;
+  padding: 0.1rem 0.5rem;
   background-color: white;
   border: 2px solid black;
   border-radius: 3rem;
@@ -67,21 +67,34 @@ const Drawer = ({ isOpen, toggleDrawer }) => {
       {isOpen && <Backdrop onClick={toggleDrawer} />}
       <SDrawer isOpen={isOpen}>
         <RightNav>
-          {/* <SNavbarBrand>LOGO</SNavbarBrand> */}
+          <SNavbarBrand>BigPIP</SNavbarBrand>
           <NavRoutes>
 
-          <NavRoute to="faq" key="home">
+              <NavRoute
+                href="faq" 
+                key="home" 
+                onClick={toggleDrawer} >
                   Faq
-                </NavRoute>
-                <NavRoute to="aboutus" key="home">
+              </NavRoute>
+                <NavRoute
+                 href="aboutus" 
+                 key="aboutus" 
+                 onClick={toggleDrawer} >
                   About us
                 </NavRoute>
-                <NavRoute to="getstarted" key="home">
-                  Get Started
+                <NavRoute 
+                  href="getstarted" 
+                  key="getstarted" 
+                  onClick={toggleDrawer} >
+                    Get Started
                 </NavRoute>
 
           </NavRoutes>
-          <LoginButton>Login</LoginButton>
+          <LoginButton>
+            <NavRoute href='signin'>
+                Log in/ Sign up
+            </NavRoute>
+          </LoginButton>
         </RightNav>
       </SDrawer>
     </>

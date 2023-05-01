@@ -19,7 +19,7 @@ const Signup = () => {
     <div className={styles.signin}>
     <div className={styles.signin_content}>
       <div className={styles.signin_img}>
-        <Image src="/signin.png" alt="logo" width={200} height={300}/>
+        <Image src="/signin.png" alt="logo" width={400} height={600}/>
       </div>
       <div className={styles.sigin_form}>
         <h2 className={styles.signin_form_heading}>Sign up</h2>
@@ -80,7 +80,7 @@ const Signup = () => {
                 <span
                   style={{ textDecoration: "underline", cursor: "pointer" }}
                 >
-                  <Link href="/login" style={{textDecoration: 'none', color: "#666"}}>Sign in</Link>
+                  <Link href="/signin" style={{textDecoration: 'none', color: "#666"}}>Sign in</Link>
                 </span>
               </span>
             </div>
