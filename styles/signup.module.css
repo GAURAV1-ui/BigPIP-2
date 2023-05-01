@@ -132,5 +132,9 @@ input[type=password]::-ms-clear
     }
     .signin_form_heading {
         text-align: center;
+        font-size: 30px;
+    }
+    .sigin_oauth_google_text {
+        margin-top: 2rem;
     }
 }
