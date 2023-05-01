@@ -77,16 +77,16 @@ export default function Home() {
               src="/HeroBackgroundBull.png"
               className={styles.imgTop1}
               alt="homebackgroundBull"
-              width={650}
-              height={550}
+              width={620}
+              height={450}
              
             />
             <Image
               src="/HeroBackgroundBull1.png"
               className={styles.imgTop}
               alt="homebackgroundBull1"
-              width={680}
-              height={560}
+              width={640}
+              height={460}
             />
           </div>
         </div>

@@ -10,7 +10,7 @@ const DrawerButton = styled.button`
   all: unset;
   font-size: 2rem;
   display: grid;
-  @media (min-width: 768px) {
+  @media (min-width: 780px) {
     display: none;
   }
 `;
