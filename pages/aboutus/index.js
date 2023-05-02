@@ -2,6 +2,14 @@ import styles from "../../styles/aboutus.module.css";
 import Image from "next/image";
 
 const Aboutus = () => {
+
+  const style = {
+    '@media (max-width: 700px)': {
+        display: "flex",
+        flexDirection: "column",
+    },
+  };
+
   return (
     <>
       <div className={styles.aboutus}>
@@ -14,21 +22,21 @@ const Aboutus = () => {
               <Image 
               src="/trade.png" 
               alt="" 
-              width={250}
+              width={300}
               height={200}/>
             </div>
             <div>
               <Image 
               src="/tradecentric.png" 
               alt="" 
-              width={250}
+              width={300}
               height={200}/>
             </div>
             <div>
               <Image
                src="/trust.png" 
                alt="" 
-               width={250}
+               width={300}
                height={200}/>
             </div>
           </div>
@@ -49,8 +57,7 @@ const Aboutus = () => {
                     height={200}/>
                 </div>
             </div>
-            <div className={styles.aboutus_content_section}>
-                <div>
+            <div style={style} className={`$(window).width > 700 ? ${styles.aboutus_content_section} : ${styles.aboutus_content_section1}`}>                <div>
                     <Image
                      src='/Long-Term.png' 
                      alt="" 
@@ -76,7 +83,7 @@ const Aboutus = () => {
                     src='/Dynamic.png' 
                     alt="" 
                     width={300}
-                    height={200}/>
+                    height={300}/>
                 </div>
             </div>
         </div>

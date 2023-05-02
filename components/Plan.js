@@ -19,7 +19,7 @@ const Plan = () => {
                 <button className={showOneStep ? styles.plan_content_btns_onestep : styles.plan_content_btns_standard} onClick={() => toggleAccountType()}>1-Step Evaluation</button>
                 <button className={showOneStep ? styles.plan_content_btns_standard : styles.plan_content_btns_onestep} onClick={() => toggleAccountType()}>Standard Evaluation</button>
                 </div>
-                {/* <div className={styles.plan_content_tables}>
+                <div className={styles.plan_content_tables}>
                     {showOneStep && <div className={styles.plan_content_tables_grid_onestep}>
                         <div className={styles.header_1}>1-Step Evaluation</div>
                         <div className={styles.header_2}>$10,000</div>
@@ -80,7 +80,7 @@ const Plan = () => {
                         <div className={styles.plan_btn_5}><button>Choose Plan</button></div>
                         <div className={styles.plan_btn_6}><button>Choose Plan</button></div>
                     </div>}
-                </div> */}
+                </div>
         {/* <div className ={styles.plan_table} style={{overflowX:"auto"}}>
             <table cellspacing='0'>
             <tr className={styles.row}>
