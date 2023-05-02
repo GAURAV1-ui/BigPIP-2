@@ -62,7 +62,7 @@
     border-radius: 1rem;
     
   }
-  
+/*   
   .header_1 {
     grid-area: header_1;
     background: #0a3100;
@@ -243,7 +243,38 @@
   
   .plan_content_tables_grid_onestep div, .plan_content_tables_grid_standard div {
     padding: 0.8rem;
-  }
+  } */
+  
+/* .plan_table table{
+
+} */
+
+.plan_table table {
+  text-align: center;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid black;
+}
+
+.plan_table td {
+  text-align: center;
+  overflow: hidden;
+  padding: 0.6em 1rem;
+}
+.plan_table th {
+  text-align: center;
+  overflow: hidden;
+  padding: 0.6em 1rem;
+}
+
+.plan_btn {
+  background: #0A3100;
+  color: white;
+  padding: 0.4em 1rem;
+  border-radius: 0.3rem;
+  border: 0;
+  cursor: pointer;
+}
 
   @media screen and (max-width: 748px){
     .plan_content_h{

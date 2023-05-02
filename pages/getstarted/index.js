@@ -28,22 +28,22 @@ const GetStarted = (props) => {
     const onHandleSubmit = (event) => {
       event.preventDefault();
 
-      // console.log(props.data);
+      console.log(props.data);
 
-      // axios({
-      //   method: 'post',
-      //   url: 'https://bigpip-cms.up.railway.app/api/get-startedhttps://bigpip-cms.up.railway.app/api/get-started?populate=*',
-      //   data: qs.stringify({
+      axios({
+        method: 'post',
+        url: 'https://bigpip-cms.up.railway.app/api/ezforms/submit',
+        // data: qs.stringify({
           
-      //   }),
-      //   headers: {
-      //     'content-type': 'application/json'
-      //   }
-      // }).then((res) => {
-      //   const result = res.data.result;
-      //   setUserTranscribedInput(result);
-      // }).catch((err) => {
-      // })
+        // }),
+        headers: {
+          'content-type': 'application/json'
+        }
+      }).then((res) => {
+        console.log(res);
+      }).catch((err) => {
+        console.log(err);
+      })
     }
 
       //   useEffect(() => {

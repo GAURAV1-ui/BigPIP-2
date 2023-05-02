@@ -233,11 +233,11 @@
   
     .contact_form form,
     .contact-info {
-      padding: 1rem 1.6rem;
+      padding: 0 1.6rem;
     }
 
     .information {
-      margin-top: -0.8rem;
+      margin-top: -1rem;
     }
   
     .text,

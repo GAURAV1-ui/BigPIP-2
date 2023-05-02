@@ -50,7 +50,6 @@
     outline: none;
     color: #fff;
     transition: 0.3s;
-    /* text-align: left; */
     }
     
     .footer_items ul a:hover {
@@ -117,14 +116,38 @@
       .inner_footer {
         display: flex;
         flex-direction: column;
+        padding: 15px;
       }
       .footer_item{
         width: 100%;
-        margin-bottom:2rem;
+        margin-bottom:1rem;
       }
+      .footer_items ul {
+        margin:0;
+        padding: 0;
+        }
+        .footer_items ul li {
+          font-size: 12px;
+          margin: 10px 0;
+          height: 25px;
+          }
+          .footer_items h1 {
+            font-size: 20px;
+            }
+            .footer_items h3{
+              font-size: 16px;
+            }
       .footer_items1{
         display: flex;
         justify-content: space-between;
-        width: 90%;
+        width: 100%;
       }
+      .footer_items p {
+        font-size: 12px;
+        padding-right: 0;
+      }
+      .footer_bottom {
+        font-size: 12px;
+      }
+
     }

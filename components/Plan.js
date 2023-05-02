@@ -81,8 +81,54 @@ const Plan = () => {
                         <div className={styles.plan_btn_6}><button>Choose Plan</button></div>
                     </div>}
                 </div> */}
-            </div>
-        </div>
+        {/* <div className ={styles.plan_table} style={{overflowX:"auto"}}>
+            <table cellspacing='0'>
+            <tr className={styles.row}>
+    <th style={{backgroundColor: "#0A3100", color: "white"}}>1-Step Evaluation</th>
+    <th style={{backgroundColor: "#FEE2CB"}}>$10,000</th>
+    <th style={{backgroundColor: "#FEE2CB"}}>$10,000</th>
+    <th style={{backgroundColor: "#FEE2CB"}}>$10,000</th>
+    <th style={{backgroundColor: "#FEE2CB"}}>$10,000</th>
+  </tr>
+  <tr className={styles.row}>
+    <td style={{backgroundColor: "#FEE2CB"}}>Target</td>
+    <td colspan="4">Phase | Target: 10%</td>
+  </tr>
+  <tr className={styles.row}>
+    <td style={{backgroundColor: "#FEE2CB"}}>Minimum Trading Days</td>
+    <td colspan='4'>5 Days</td>
+  </tr>
+  <tr className={styles.row}>
+    <td style={{backgroundColor: "#FEE2CB"}}>Maximum Trading Days</td>
+    <td colspan='4'>Unlimited</td>
+  </tr>
+  <tr className={styles.row}>
+    <td style={{backgroundColor: "#FEE2CB"}}>Available Leverage</td>
+    <td colspan='4'>1:100</td>
+  </tr>
+  <tr className={styles.row}>
+    <td style={{backgroundColor: "#FEE2CB"}}>Profit Split</td>
+    <td colspan='4'>70%</td>
+  </tr>
+  <tr className={styles.row}>
+    <td style={{backgroundColor: "#FEE2CB"}}>Refundable Registration Fees</td>
+    <td>$99</td>
+    <td>$189</td>
+    <td>$399</td>
+    <td>$749</td>
+  </tr>
+  <tr className={styles.row}>
+    <td style={{backgroundColor: "#FEE2CB"}}>Plan</td>
+    <td><button className={styles.plan_btn}>Choose Plan</button></td>
+    <td><button className={styles.plan_btn}>Choose Plan</button></td>
+    <td><button className={styles.plan_btn}>Choose Plan</button></td>
+    <td><button className={styles.plan_btn}>Choose Plan</button></td>
+  </tr>
+</table>
+  </div> */}
+
+    </div>
+    </div>
     )
 }
 
