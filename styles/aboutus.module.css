@@ -12,7 +12,7 @@
 }
 
 .aboutus_heading {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 500;
     color: #fff;
     margin-left: 2.5rem;
@@ -97,8 +97,8 @@
     width: 100%;
     font-size: 12px;
 }
-.aboutus_heading h1{
-    padding: 0;
+.aboutus_heading {
+    font-size: 1rem;
 }
 
 }

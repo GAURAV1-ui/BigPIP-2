@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
-
-// import ExpandMenu from "./ExpandMenu";
+import { useRouter } from 'next/navigation';
 
 const SNavbarBrand = styled.h2`
   font-size: 2.5rem;
@@ -62,12 +61,18 @@ const LoginButton = styled.button`
   }
 `;
 const Drawer = ({ isOpen, toggleDrawer }) => {
+
+  const router = useRouter();
+  const clickImageHandler = () => {
+    router.push("/");
+  }
+
   return (
     <>
       {isOpen && <Backdrop onClick={toggleDrawer} />}
       <SDrawer isOpen={isOpen}>
         <RightNav>
-          <SNavbarBrand>BigPIP</SNavbarBrand>
+          <SNavbarBrand onClick = {clickImageHandler}>BigPIP</SNavbarBrand>
           <NavRoutes>
 
               <NavRoute
