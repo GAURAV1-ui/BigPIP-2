@@ -1,0 +1,1 @@
+export const AUTH_TOKEN = "BIGPIP_FUNDING_AUTH_TOKEN";

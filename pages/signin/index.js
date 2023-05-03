@@ -1,13 +1,53 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../../styles/signin.module.css";
 import { FcGoogle } from "react-icons/fc";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import {
+  signInWithPopup,
+  GoogleAuthProvider,
+  getAuth,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 
 const Signin = () => {
   const [toggleHide, setToggleHide] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const passwordType = toggleHide ? "text" : "password";
+
+  const handleGoogleSignIn = () => {
+    const provider = new GoogleAuthProvider();
+    const auth = getAuth();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const user = result.user;
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.email;
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // alert(errorMessage);
+        if (errorCode === "auth/account-exists-with-different-credential") {
+          alert("Email already associated with another account");
+        }
+      });
+  };
+
+  const handleEmailSignin = () => {
+    signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+  };
 
   const toggleHideIcon = () => {
     setToggleHide((prevToggleHide) => !prevToggleHide);
@@ -22,7 +62,10 @@ const Signin = () => {
         <div className={styles.sigin_form}>
           <h2 className={styles.signin_form_heading}>Sign in</h2>
           <div className={styles.signin_oauth}>
-            <div className={styles.sigin_oauth_google_text}>
+            <div
+              className={styles.sigin_oauth_google_text}
+              onClick={handleGoogleSignIn}
+            >
               <FcGoogle />
               <span>&nbsp;Continue with Google</span>
             </div>
@@ -44,6 +87,7 @@ const Signin = () => {
                 <input
                   type="text"
                   name="email"
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Email"
                   className={styles.signin_form_input_field}
                 />
@@ -66,6 +110,8 @@ const Signin = () => {
                 <input
                   type={passwordType}
                   placeholder="Password"
+                  name="password"
+                  onChange={(e) => setPassword(e.target.value)}
                   className={styles.signin_form_input_field}
                 />
               </div>
@@ -82,7 +128,12 @@ const Signin = () => {
                 </span>
               </div>
               <div className={styles.signin_input}>
-                <button className={styles.signin_input_button}>Sign in</button>
+                <button
+                  className={styles.signin_input_button}
+                  onClick={handleEmailSignin}
+                >
+                  Sign in
+                </button>
               </div>
               <div className={styles.signin_input}>
                 <span className={styles.signin_input_label}>
@@ -90,7 +141,12 @@ const Signin = () => {
                   <span
                     style={{ textDecoration: "underline", cursor: "pointer" }}
                   >
-                    <Link href="/signup" style={{textDecoration: 'none', color: "#666"}}>Sign up</Link>
+                    <Link
+                      href="/signup"
+                      style={{ textDecoration: "none", color: "#666" }}
+                    >
+                      Sign up
+                    </Link>
                   </span>
                 </span>
               </div>
