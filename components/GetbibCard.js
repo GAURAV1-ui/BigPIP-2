@@ -1,4 +1,5 @@
-import React from "react";
+import React,{useEffect} from "react";
+import axios from "axios";
 import styles from '../styles/getbibcard.module.css';
 import Image from "next/image";
 // import Vector1 from "../../Images/Vector1.svg";
@@ -8,6 +9,15 @@ import Image from "next/image";
 // import cash from "../../Images/cash-icon.svg";
 
 const GetbibCard = () => {
+
+  useEffect(() => {
+    axios.get("https://bigpip-cms.up.railway.app/api/home?populate=*")
+      .then((res) => {
+        // console.log(res.data);
+      }).catch((err) => {
+      })
+  }, []);
+
   return (
     <div>
       <div className={styles.getbib}>

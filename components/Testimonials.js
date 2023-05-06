@@ -1,10 +1,20 @@
 // import styles from "./Testimonials.module.css";
+import React,{useEffect} from "react";
+import axios from "axios";
 import styles from '../styles/testimonials.module.css';
 import { FaStar } from "react-icons/fa";
 import { IconContext } from "react-icons";
 
-const Testimonials = (props) => {
-  // console.log(props);
+const Testimonials = () => {
+
+  useEffect(() => {
+    axios.get("https://bigpip-cms.up.railway.app/api/home?populate=*")
+      .then((res) => {
+        // console.log(res.data);
+      }).catch((err) => {
+      })
+  }, []);
+
   return (
     <div style ={{backgroundColor: "#001f0f"}}>
     <div className={styles.testimonials}>
