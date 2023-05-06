@@ -139,7 +139,6 @@ const GetStarted = (props) => {
 export async function getServerSideProps() {
   const res = await fetch(`https://bigpip-cms.up.railway.app/api/get-started?populate=*`)
   const data = await res.json();
-  // console.log(data);
   return { props: { data } }
 }
 

@@ -1,39 +1,39 @@
-import { useEffect, useState } from "react";
-import { getAuth } from "firebase/auth";
-import { app } from "./config";
+// import { useEffect, useState } from "react";
+// import { getAuth } from "firebase/auth";
+// import { app } from "./config";
 
-const formatAuthUser = (user) => ({
-  uid: user.uid,
-  email: user.email,
-});
+// const formatAuthUser = (user) => ({
+//   uid: user.uid,
+//   email: user.email,
+// });
 
-function useFirebaseAuth() {
-  const [currentUser, setCurrentUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+// function useFirebaseAuth() {
+//   const [currentUser, setCurrentUser] = useState(null);
+//   const [loading, setLoading] = useState(true);
 
-  const authStateChanged = async (authState) => {
-    if (!authState) {
-      setCurrentUser(null);
-      setLoading(false);
-      return;
-    }
+//   const authStateChanged = async (authState) => {
+//     if (!authState) {
+//       setCurrentUser(null);
+//       setLoading(false);
+//       return;
+//     }
 
-    setLoading(true);
-    const formattedUser = formatAuthUser(authState);
-    setCurrentUser(formattedUser);
-    setLoading(false);
-  };
+//     setLoading(true);
+//     const formattedUser = formatAuthUser(authState);
+//     setCurrentUser(formattedUser);
+//     setLoading(false);
+//   };
 
-  useEffect(() => {
-    const auth = getAuth(app);
-    const unsubscribe = auth.onAuthStateChanged(authStateChanged);
-    return () => unsubscribe();
-  }, []);
+//   useEffect(() => {
+//     const auth = getAuth(app);
+//     const unsubscribe = auth.onAuthStateChanged(authStateChanged);
+//     return () => unsubscribe();
+//   }, []);
 
-  return {
-    currentUser,
-    loading,
-  };
-}
+//   return {
+//     currentUser,
+//     loading,
+//   };
+// }
 
-export default useFirebaseAuth();
+// export default useFirebaseAuth();

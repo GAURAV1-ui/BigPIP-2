@@ -6,9 +6,11 @@ import ChallengeObjective from '../components/ChallengeObjective';
 import Plan from "@/components/Plan";
 import GetbibCard from "@/components/GetbibCard";
 import GetFund from "@/components/GetFund";
+import Testimonials from "@/components/Testimonials";
 
-export default function Home() {
+export default function Home(props) {
 
+  console.log(props.data);
   const [counter, setCounter] = useState(100);
   const [counter1, setCounter1] = useState(0);
   const router = useRouter();
@@ -94,8 +96,15 @@ export default function Home() {
       </div>
       <GetFund/>
       <GetbibCard/>
-    <Plan/>
-    <ChallengeObjective/>
+      <ChallengeObjective/>
+      <Plan/>
+      <Testimonials/>
     </main>
   )
+}
+
+export async function getServerSideProps() {
+  const res = await fetch(`https://bigpip-cms.up.railway.app/api/home?populate=*`)
+  const data = await res.json();
+  return { props: { data } }
 }
