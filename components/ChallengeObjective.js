@@ -1,6 +1,17 @@
+import React, {useEffect} from 'react';
+import axios from 'axios';
 import styles from '../styles/challengeObjective.module.css';
 
 const Challenge = () => {
+
+  
+    useEffect(() => {
+        axios.get("https://bigpip-cms.up.railway.app/api/home?populate=*")
+          .then((res) => {
+            // console.log(res.data);
+          }).catch((err) => {
+          })
+      }, []);
   return (
     <div className={styles.objective}>
       <div className={styles.objective_content}>
@@ -51,5 +62,11 @@ const Challenge = () => {
     </div>
   );
 };
+
+export async function getServerSideProps() {
+  const res = await fetch(`https://bigpip-cms.up.railway.app/api/home?populate=*`)
+  const data = await res.json();
+  return { props: { data } }
+}
 
 export default Challenge;

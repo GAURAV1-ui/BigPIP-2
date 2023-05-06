@@ -11,7 +11,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 
-const Signin = () => {
+const Signin = (props) => {
   const [toggleHide, setToggleHide] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -157,5 +157,6 @@ const Signin = () => {
     </div>
   );
 };
+
 
 export default Signin;

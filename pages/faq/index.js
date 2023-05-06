@@ -16,13 +16,6 @@ const Faq = (props) => {
         setSelected(i);
     };
 
-    // useEffect(() => {
-    //     axios.get("https://bigpip-cms.up.railway.app/api/FAQ")
-    //       .then((res) => {
-    //         console.log(res);
-    //       }).catch((err) => {
-    //       })
-    //   }, []);
 
     return (
         <>

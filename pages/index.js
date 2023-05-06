@@ -10,7 +10,7 @@ import Testimonials from "@/components/Testimonials";
 
 export default function Home(props) {
 
-  console.log(props.data.data.attributes.hero);
+  // console.log(props.data.data.attributes.hero);
   const [counter, setCounter] = useState(100);
   const [counter1, setCounter1] = useState(0);
   const router = useRouter();
