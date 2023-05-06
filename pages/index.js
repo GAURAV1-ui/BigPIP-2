@@ -10,24 +10,24 @@ import Testimonials from "@/components/Testimonials";
 
 export default function Home(props) {
 
-  console.log(props.data);
+  console.log(props.data.data.attributes.hero);
   const [counter, setCounter] = useState(100);
   const [counter1, setCounter1] = useState(0);
   const router = useRouter();
 
   useEffect(() => {
-    if (counter < 500) {
+    if (counter < props.data.data.attributes.hero.peopleOnboard-40) {
       setTimeout(() => {
-        setCounter((counter) => counter + 32);
+        setCounter((counter) => counter + 40);
       }, 100);
     }
   }, [counter]);
 
   useEffect(() => {
-    if (counter1 < 2) {
+    if (counter1 < props.data.data.attributes.hero.paidOut) {
       setTimeout(() => {
         setCounter1((counter1) => counter1 + 1);
-      }, 100);
+      }, 200);
     }
   }, [counter1]);
 

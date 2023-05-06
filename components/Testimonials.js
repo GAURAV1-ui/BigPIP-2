@@ -3,7 +3,8 @@ import styles from '../styles/testimonials.module.css';
 import { FaStar } from "react-icons/fa";
 import { IconContext } from "react-icons";
 
-const Testimonials = () => {
+const Testimonials = (props) => {
+  // console.log(props);
   return (
     <div style ={{backgroundColor: "#001f0f"}}>
     <div className={styles.testimonials}>
@@ -103,5 +104,11 @@ const Testimonials = () => {
     </div>
   );
 };
+
+export async function getServerSideProps() {
+  const res = await fetch(`https://bigpip-cms.up.railway.app/api/testimonials?populate=*`)
+  const data = await res.json();
+  return { props: { data } }
+}
 
 export default Testimonials;

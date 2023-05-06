@@ -35,7 +35,7 @@ const GetFund = () => {
 
             <div className={styles.getFundCard2}>
                 <h3>Choose your Plan</h3>
-                <p>Our Prop Firm has multiple programs to start your journey as a Forex Funded Trader</p>
+                <p>Prove our capital is safe in your hands by not losing more than 12%</p>
                 <button>Evaluation Objectives</button>
             </div>
             <div className={styles.getFundCard3}>
