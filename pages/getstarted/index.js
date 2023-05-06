@@ -5,6 +5,8 @@ import { AiFillMail} from 'react-icons/ai';
 import { BsDiscord} from 'react-icons/bs';
 import { IoLogoWhatsapp} from 'react-icons/io';
 import { BsTelegram} from 'react-icons/bs';
+import { toast,ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const GetStarted = (props) => {
     const [userName, setUserName] = useState("");
@@ -28,21 +30,33 @@ const GetStarted = (props) => {
     const onHandleSubmit = (event) => {
       event.preventDefault();
 
-      console.log(props.data);
+      // if(userEmail === "" || userName === "" || userTel === "" || userMessage === "") {
+      //     toast.error("Please complete your details.");
+      //     return;
+      // }
 
       axios({
         method: 'post',
         url: 'https://bigpip-cms.up.railway.app/api/ezforms/submit',
-        // data: qs.stringify({
-          
-        // }),
+        data:({
+          name: userName,
+          email: userEmail,
+          phone: userTel,
+          message: userMessage
+        }),
         headers: {
           'content-type': 'application/json'
         }
       }).then((res) => {
+        setUserName('');
+        setUserEmail('');
+        setUserTel('');
+        setUserMessage('');
+        toast.success("Thankyou for your response");
         console.log(res);
       }).catch((err) => {
         console.log(err);
+        toast.error("Something wrong");
       })
     }
 
@@ -97,6 +111,7 @@ const GetStarted = (props) => {
              className={styles.input}
              placeholder='username'
              value = {userName}
+             required
              onChange = {onUserNameChange}
              />
           </div>
@@ -107,6 +122,7 @@ const GetStarted = (props) => {
             className={styles.input}
             placeholder='useremail'
             value = {userEmail}
+            required
             onChange = {onUserEmailChange}/>
             {/* <label for="}>Email</label>
             <span>Email</span> */}
@@ -117,6 +133,7 @@ const GetStarted = (props) => {
              className={styles.input} 
              placeholder='phone'
              value = {userTel}
+             required
              onChange = {onTelChange}/>
           </div>
           <div className={`${styles.input_container} ${styles.textarea}`}>
@@ -124,8 +141,10 @@ const GetStarted = (props) => {
              className={styles.input} 
              placeholder='message.....'
              value = {userMessage}
+             required
              onChange = {onMessageChange}>
              </textarea>
+             <ToastContainer/>
           </div>
           <input type="submit" value="Send" className={styles.btn}/>
         </form>
