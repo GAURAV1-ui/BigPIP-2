@@ -63,7 +63,7 @@ const Testimonials = () => {
               
             </div>
             </div>
-                ))} 
+            ))} 
 
           {/* <div className={styles.testimonials_content_card}>
             <div className={styles.testimonials_content_card_heading}>
