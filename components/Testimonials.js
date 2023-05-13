@@ -7,12 +7,13 @@ import { IconContext } from "react-icons";
 
 const Testimonials = () => {
 
-  const [testimonial, setTestimmonial] = useState();
+  const [testimonial, setTestimmonial] = useState([]);
 
   useEffect(() => {
     axios.get("https://bigpip-cms.up.railway.app/api/testimonials?populate=*")
       .then((res) => {
         const data = res.data.data;
+        console.log(data);
         setTestimmonial(data);
       }).catch((err) => {
       })

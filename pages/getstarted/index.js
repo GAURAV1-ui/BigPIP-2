@@ -38,12 +38,14 @@ const GetStarted = (props) => {
       axios({
         method: 'post',
         url: 'https://bigpip-cms.up.railway.app/api/ezforms/submit',
-        data:({
+        data:
+        {  formData : {
           name: userName,
           email: userEmail,
           phone: userTel,
           message: userMessage
-        }),
+        }
+        },
         headers: {
           'content-type': 'application/json'
         }
