@@ -1,15 +1,15 @@
-// import { Navigate } from "react-router-dom";
-// import { useAuthContext } from "../contexts/AuthContext";
-// import { AUTH_TOKEN } from "../constants";
+import { Navigate } from "react-router-dom";
+import { useAuthContext } from "../contexts/AuthContext";
+import { AUTH_TOKEN } from "../constants";
 
-// const PrivateRoute = ({ component: RouteComponent }) => {
-//   const { currentUser } = useAuthContext();
+const PrivateRoute = ({ component: RouteComponent }) => {
+  const { currentUser } = useAuthContext();
 
-//   if (!currentUser && !localStorage.getItem(AUTH_TOKEN)) {
-//     return <Navigate to="/login" />;
-//   }
+  if (!currentUser && !localStorage.getItem(AUTH_TOKEN)) {
+    return <Navigate to="/login" />;
+  }
 
-//   return <RouteComponent />;
-// };
+  return <RouteComponent />;
+};
 
-// export default PrivateRoute;
+export default PrivateRoute;

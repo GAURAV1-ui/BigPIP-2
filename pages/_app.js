@@ -1,11 +1,10 @@
 import "@/styles/globals.css";
 import Head from "next/head";
-import { Provider } from "react-redux";
+// import { Provider } from "react-redux";
 import Navigation from "../components/Navbar/Navigation";
 import Footer from "@/components/Footer/Footer";
 import "../styles/globals.css";
 import { AuthUserProvider } from "@/utils/contexts/AuthContext";
-import Footer from '../components/Footer/Footer';
 
 export default function App({ Component, pageProps }) {
   return (
@@ -27,12 +26,12 @@ export default function App({ Component, pageProps }) {
                 />
       </Head>
 
-      <Provider>
+      {/* <Provider> */}
       <Navigation />
       <Component {...pageProps} />
       <Footer />
-      <Footer/>
-      </Provider> 
+      {/* <Footer/> */}
+      {/* </Provider>  */}
     </AuthUserProvider>
   );
 }
