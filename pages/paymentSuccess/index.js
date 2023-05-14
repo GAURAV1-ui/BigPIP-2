@@ -6,4 +6,4 @@ const PaymentScuccess = () => {
   )
 }
 
-export defaPaymentScuccess;
+export default PaymentScuccess;
