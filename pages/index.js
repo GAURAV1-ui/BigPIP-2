@@ -10,13 +10,13 @@ import Testimonials from "@/components/Testimonials";
 
 export default function Home(props) {
 
-  // console.log(props.data.data.attributes.hero);
+  console.log(props.data.data.attributes.hero);
   const [counter, setCounter] = useState(100);
   const [counter1, setCounter1] = useState(0);
   const router = useRouter();
 
   useEffect(() => {
-    if (counter < props.data.data.attributes.hero.peopleOnboard-40) {
+    if (counter < props.data.data.attributes.hero.peopleOnboard) {
       setTimeout(() => {
         setCounter((counter) => counter + 40);
       }, 100);
@@ -24,6 +24,7 @@ export default function Home(props) {
   }, [counter]);
 
   useEffect(() => {
+    // if (counter1 < 8) {
     if (counter1 < props.data.data.attributes.hero.paidOut) {
       setTimeout(() => {
         setCounter1((counter1) => counter1 + 1);
