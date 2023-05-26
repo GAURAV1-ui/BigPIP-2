@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from 'next/navigation';
 import { FaBars } from "react-icons/fa";
-// import logo from "./logo.png";
+
+// import logo from "";
 // import Menu from "./Menu";
 
 const DrawerButton = styled.button`
@@ -41,13 +43,13 @@ const NavContainer = styled.div`
 //     }
 // `;
 
-const SNav = styled.h1 `
-  font-size : 35px;
-  cursor: pointer;
-  @media (max-width: 768px) {
-    font-size: 1.8rem;
-  }
-`
+// const SNav = styled.h1 `
+//   font-size : 35px;
+//   cursor: pointer;
+//   @media (max-width: 768px) {
+//     font-size: 1.8rem;
+//   }
+// `
 const RightNav = styled.div`
   display: flex;
   gap: 2rem;
@@ -100,7 +102,8 @@ const Navbar = ({ toggleDrawer }) => {
         <DrawerButton onClick={toggleDrawer}>
           <FaBars />
         </DrawerButton>
-        <SNav onClick = {clickImageHandler}>BigPIP </SNav>
+        {/* <Image src={logo} onClick = {clickImageHandler} >BigPIP </Image> */}
+        <Image src="/logo.png" alt="/" onClick = {clickImageHandler} width={220} height={35}/>
         <RightNav>
           <NavRoutes>
         
