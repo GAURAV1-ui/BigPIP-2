@@ -73,10 +73,9 @@ const Cart = () => {
     <ul>
       <li className={styles.totalRow}><span className={styles.label}>Subtotal</span><span className={styles.value}>$35.00</span></li>
 
-      <li className={styles.totalRow}><span className={styles.label}>Shipping</span><span className={styles.value}>$5.00</span></li>
+      <li className={styles.totalRow}><span className={styles.label}>Discount</span><span className={styles.value}>- $5.00</span></li>
 
-      <li className={styles.totalRow}><span className={styles.label}>Tax</span><span className={styles.value}>$4.00</span></li>
-      <li className={`${styles.totalRow} ${styles.final}`}><span className={styles.label}>Total</span><span className={styles.value}>$44.00</span></li>
+      <li className={`${styles.totalRow} ${styles.final}`}><span className={styles.label}>Total</span><span className={styles.value}>$30.00</span></li>
       <li className={styles.totalRow}><a href="/" className={`${styles.btn} ${styles.continue}`}>Checkout</a></li>
     </ul>
   </div>

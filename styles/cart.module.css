@@ -22,7 +22,6 @@
 }
 
 .projTitle {
-  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   text-align: center;
   font-size: 2em;
@@ -40,7 +39,7 @@
 }
 
 .heading {
-  padding: 1em 0;
+  padding: 0.5em 0;
   border-bottom: 1px solid #D0D0D0;
 }
 .heading h1 {
@@ -100,7 +99,11 @@
 }
 
 .cart {
+
   padding: 1em 0;
+}
+.cart ul {
+    padding-inline-start: 0px;
 }
 .cart .items {
   display: block;
@@ -294,6 +297,9 @@ a.remove:hover {
 .subtotal {
   float: right;
   width: 35%;
+}
+.subtotal li {
+    list-style-type: none;
 }
 .subtotal .totalRow {
   padding: .5em;
