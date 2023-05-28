@@ -10,7 +10,7 @@ import Testimonials from "@/components/Testimonials";
 
 export default function Home(props) {
 
-  console.log(props.data.data.attributes.hero);
+
   const [counter, setCounter] = useState(100);
   const [counter1, setCounter1] = useState(0);
   const router = useRouter();
@@ -107,5 +107,5 @@ export default function Home(props) {
 export async function getServerSideProps() {
   const res = await fetch(`https://bigpip-cms.up.railway.app/api/home?populate=*`)
   const data = await res.json();
-  return { props: { data } }
+  return { props: {data}}
 }

@@ -116,6 +116,9 @@ const Navbar = ({ toggleDrawer }) => {
                 <NavRoute href="getstarted" key="getstarted">
                   Get Started
                 </NavRoute>
+                <NavRoute href="cart" key="cart">
+                  cart
+                </NavRoute>
                 <LoginButton>
                   <NavRoute href='signin'>
                     Log in/ Sign up
