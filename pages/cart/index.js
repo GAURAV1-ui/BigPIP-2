@@ -5,7 +5,7 @@ const Cart = () => {
   return (
     <div>
       <div className={`${styles.wrap} ${styles.cf}`}>
-  <h1 className={styles.projTitle}>Responsive Table<span>-Less</span> Shopping Cart</h1>
+  <h1 className={styles.projTitle}>Your Cart</h1>
   <div className={`${styles.heading} ${styles.cf}`}>
     <h1 className={styles.heading1}>My Cart</h1>
     <a href="/" className={styles.continue}>Continue Shopping</a>
@@ -26,7 +26,7 @@ const Cart = () => {
             <p className={styles.itemNumber}>#QUE-007544-002</p>
             <h3>Item Name 1</h3>
 
-            <p> <input type ="text" className={styles.qty} placeholder="3" /> x $5.00</p>
+            <p> <input type ="number" className={styles.qty} placeholder="3" /> x $5.00</p>
 
             <p className={styles.stockStatus}> In Stock</p>
           </div>

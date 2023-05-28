@@ -28,7 +28,6 @@
   padding: 1em 0;
   border-bottom: 1px solid #dadada;
   letter-spacing: 3px;
-  text-transform: uppercase;
 }
 .projTitle span {
   font-family: "Droid Serif", serif;
@@ -180,7 +179,6 @@
 
 .special {
   display: block;
-  font-family: "Montserrat", sans-serif;
 }
 .special .specialContent {
   padding: 1em 1em 0;
@@ -259,7 +257,7 @@ a.remove:hover {
   font-family: "Montserrat", sans-serif;
   letter-spacing: -.015em;
   font-size: 1em;
-  padding: 1em 3em;
+  padding: 0.8em 3em;
   color: #fff;
   background: #82ca9c;
   font-weight: bold;
@@ -290,8 +288,8 @@ a.remove:hover {
   right: -10px;
 }
 .promoCode .btn {
-  font-size: .85em;
-  paddding: .5em 2em;
+  font-size: .75em;
+  padding: .4em 2em;
 }
 
 .subtotal {
@@ -328,7 +326,7 @@ a.remove:hover {
 @media only screen and (max-width: 39.375em) {
   .wrap {
     width: 98%;
-    padding: 2% 0;
+    padding: 2% 5%;
   }
 
   .projTitle {
