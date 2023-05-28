@@ -52,6 +52,7 @@
   letter-spacing: -.015em;
   font-size: .75em;
   padding: 1em;
+  margin-top: 1rem;
   color: #fff;
   background: #82ca9c;
   font-weight: bold;
@@ -98,7 +99,6 @@
 }
 
 .cart {
-
   padding: 1em 0;
 }
 .cart ul {
@@ -165,7 +165,7 @@
   font-size: 1.25em;
 }
 .cart .items .cartSection input.qty {
-  width: 2em;
+  width: 3em;
   text-align: center;
   font-size: 1em;
   padding: .25em;
@@ -304,7 +304,6 @@ a.remove:hover {
   text-align: right;
 }
 .subtotal .totalRow.final {
-  font-size: 1.25em;
   font-weight: bold;
 }
 .subtotal .totalRow span {
@@ -337,6 +336,9 @@ a.remove:hover {
   .heading {
     padding: 1em;
     font-size: 90%;
+  }
+  .heading h1 {
+    font-size: 1.7em;
   }
 
   .cart .items .cartSection {

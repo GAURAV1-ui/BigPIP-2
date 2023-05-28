@@ -14,7 +14,6 @@ const Cart = () => {
     {/* <ul className={styles.tableHead}>
       <li className={styles.prodHeader}>Product</li>
       <li>Quantity</li>
-      <li>Total</li>
        <li>Remove</li>
     </ul> */}
     <ul className={styles.cartWrap}>
@@ -23,10 +22,10 @@ const Cart = () => {
         <div className={styles.infoWrap}>
           <div className={styles.cartSection}>
             <img src ="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" className={styles.itemImg} />
-            <p className={styles.itemNumber}>#QUE-007544-002</p>
+            {/* <p className={styles.itemNumber}>#QUE-007544-002</p> */}
             <h3>Item Name 1</h3>
 
-            <p> <input type ="number" className={styles.qty} placeholder="3" /> x $5.00</p>
+            <p> <input type ="number" className={styles.qty} /> x $5.00</p>
 
             <p className={styles.stockStatus}> In Stock</p>
           </div>
@@ -45,10 +44,10 @@ const Cart = () => {
           <div className={styles.cartSection}>
 
             <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" className={styles.itemImg}/>
-            <p className={styles.itemNumber}>#QUE-007544-002</p>
+            {/* <p className={styles.itemNumber}>#QUE-007544-002</p> */}
             <h3>Item Name 1</h3>
 
-            <p> <input type="text" className={styles.qty} placeholder="3" /> x $5.00</p>
+            <p> <input type="number" className={styles.qty}/> x $5.00</p>
 
             <p className={styles.stockStatus}> In Stock</p>
           </div>
