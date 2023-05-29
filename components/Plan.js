@@ -131,10 +131,10 @@ const Plan = () => {
   </div> */}
 
 <div className={styles.scroll_container}>
-  <table className={`${styles.table} ${styles.scroll}`}>
+  {showOneStep && <table className={`${styles.table} ${styles.scroll}`}>
     <thead>
       <tr>
-        <td style= {{backgroundColor: "#0C3A08", color:"white",fontSize: "20px"}}>1-STEP EVAL.</td>
+        <td style= {{backgroundColor: "#0C3A08", color:"white",fontSize: "18px"}}>1-STEP EVAL.</td>
         <th>$10,000</th>
         <th>$20,000</th>
         <th>$50,000</th>
@@ -192,7 +192,77 @@ const Plan = () => {
         <td><button className={styles.plan_buttons}>Choose Plan</button></td>
       </tr>
     </tbody>
+  </table>}
+
+  { showStandard && <table className={`${styles.table} ${styles.scroll}`}>
+    <thead>
+      <tr>
+        <td style= {{backgroundColor: "#0C3A08", color:"white",fontSize: "18px"}}>1-STEP EVAL.</td>
+        <th>$25,000</th>
+        <th>$50,000</th>
+        <th>$1,00,000</th>
+        <th>$2,00,000</th>
+        <th>$5,00,0000</th>
+        <th>$8,00,000</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Target</td>
+        <td>Phase | Target: 10%</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Minimum Trading Days</td>
+        <td>2 Days</td>
+        <td></td>
+        <td></td>  
+        <td></td>
+      </tr>
+      <tr>
+        <td>Maximum Trading Days</td>
+        <td>Unlimited</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Available Leverage</td>
+        <td>1:200</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Profit Split</td>
+        <td>80%</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Refundable Registration Fee</td>
+        <td>$199</td>
+        <td>$299</td>
+        <td>$499</td>
+        <td>$949</td>
+        <td>$2199</td>
+        <td>$3499</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button className={styles.plan_buttons}>Choose Plan</button></td>
+        <td><button className={styles.plan_buttons}>Choose Plan</button></td>
+        <td><button className={styles.plan_buttons}>Choose Plan</button></td>
+        <td><button className={styles.plan_buttons}>Choose Plan</button></td>
+        <td><button className={styles.plan_buttons}>Choose Plan</button></td>
+        <td><button className={styles.plan_buttons}>Choose Plan</button></td>
+      </tr>
+    </tbody>
   </table>
+}
 </div>
 
     </div>
