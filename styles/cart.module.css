@@ -54,7 +54,7 @@
   padding: 1em;
   margin-top: 1rem;
   color: #fff;
-  background: #82ca9c;
+  background: #0C3901;
   font-weight: bold;
   border-radius: 50px;
   float: right;
@@ -77,7 +77,7 @@
   transition: all 0.15s linear;
 }
 .heading a.continue:hover, .heading a.continue:focus, .heading a.continue:active {
-  background: #f69679;
+  background: #de5e37;
 }
 .heading a.continue:hover:after, .heading a.continue:focus:after, .heading a.continue:active:after {
   right: -10px;
@@ -212,7 +212,7 @@ a.remove {
   transition: all 0.25s linear;
 }
 a.remove:hover {
-  background: #f30;
+  background: #de5e37;
 }
 
 .promoCode {
@@ -249,7 +249,7 @@ a.remove:hover {
 }
 .promoCode a.btn:hover {
   border: 1px solid #f69679;
-  background: #f69679;
+  background: #de5e37;
 }
 
 .btn:link, .btn:visited {
@@ -259,7 +259,7 @@ a.remove:hover {
   font-size: 1em;
   padding: 0.8em 3em;
   color: #fff;
-  background: #82ca9c;
+  background: #0C3901;
   font-weight: bold;
   border-radius: 50px;
   float: right;
@@ -282,7 +282,7 @@ a.remove:hover {
   transition: all 0.15s linear;
 }
 .btn:hover, .btn:focus, .btn:active {
-  background: #f69679;
+  background: #de5e37;
 }
 .btn:hover:after, .btn:focus:after, .btn:active:after {
   right: -10px;
