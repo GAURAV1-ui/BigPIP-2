@@ -319,6 +319,7 @@
   
   .table td {
     padding: 7px 10px;
+    text-align: center;
     /* border: 1px solid; */
   }
 
@@ -339,8 +340,8 @@
   .scroll td:first-of-type {
     position: sticky;
     left: 0;
-    /* width: 200px; */
-    text-align: center;
+    padding: 1rem 0.1rem;
+    
     border: none;
     background: #FEE2CB;
     color: #212121;

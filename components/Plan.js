@@ -141,40 +141,52 @@ const Plan = () => {
     <tbody>
       <tr>
         <td>Target</td>
+        <td></td>
+        <td></td>
         <td>Phase 1 Target: 10%</td>
-
+        <td></td>
       </tr>
       <tr>
         <td>Minimum Trading Days</td>
+        <td></td>
+        <td></td>
         <td>5 Days</td>
+        <td></td>
       </tr>
       <tr>
         <td>Maximum Trading Days</td>
-        {/* <td>The Dark Knight</td>
-        <td>Action, Crime, Drama, Thriller</td>
-        <td>2008</td>
-        <td>Christopher Nolan</td> */}
+        <td></td>
+        <td></td>
+        <td>Unlimited</td>
+        <td></td>
       </tr>
       <tr>
         <td>Available Leverage</td>
-        {/* <td>The Godfather: Part II</td>
-        <td>Crime, Drama</td>
-        <td>1974</td>
-        <td>Francis Ford Coppola</td> */}
+        <td></td>
+        <td></td>
+        <td>1:100</td>
+        <td></td>
       </tr>
       <tr>
         <td>Profit Split</td>
-        {/* <td>12 Angry Men</td>
-        <td>Crime, Drama</td>
-        <td>1957</td>
-        <td>Sidney Lumet</td> */}
+        <td></td>
+        <td></td>
+        <td>70%</td>
+        <td></td>
       </tr>
       <tr>
         <td>Refundable Registration Fee</td>
-        {/* <td>12 Angry Men</td>
-        <td>Crime, Drama</td>
-        <td>1957</td>
-        <td>Sidney Lumet</td> */}
+        <td>$99</td>
+        <td>$189</td>
+        <td>$399</td>
+        <td>$749</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button>Choose Plan</button></td>
+        <td><button>Choose Plan</button></td>
+        <td><button>Choose Plan</button></td>
+        <td><button>Choose Plan</button></td>
       </tr>
     </tbody>
   </table>
