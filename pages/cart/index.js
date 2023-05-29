@@ -25,7 +25,7 @@ const Cart = () => {
             {/* <p className={styles.itemNumber}>#QUE-007544-002</p> */}
             <h3>Item Name 1</h3>
 
-            <p> <input type ="number" className={styles.qty} /> x $5.00</p>
+            <p> <input type ="number" className={styles.qty} min ='1' step= '1',/> x $5.00</p>
 
             <p className={styles.stockStatus}> In Stock</p>
           </div>
@@ -47,7 +47,7 @@ const Cart = () => {
             {/* <p className={styles.itemNumber}>#QUE-007544-002</p> */}
             <h3>Item Name 1</h3>
 
-            <p> <input type="number" className={styles.qty}/> x $5.00</p>
+            <p> <input type="number" className={styles.qty} min ='1' step='1'/> x $5.00</p>
 
             <p className={styles.stockStatus}> In Stock</p>
           </div>
