@@ -5,7 +5,7 @@ const Cart = () => {
   return (
     <div>
       <div className={`${styles.wrap} ${styles.cf}`}>
-  <h1 className={styles.projTitle}>Your Cart</h1>
+  <h1 className={styles.projTitle}>Cart</h1>
   <div className={`${styles.heading} ${styles.cf}`}>
     <h1 className={styles.heading1}>My Cart</h1>
     <a href="/" className={styles.continue}>Continue Shopping</a>

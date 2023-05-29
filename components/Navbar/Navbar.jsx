@@ -117,7 +117,7 @@ const Navbar = ({ toggleDrawer }) => {
                   Get Started
                 </NavRoute>
                 <NavRoute href="cart" key="cart">
-                  cart
+                  Cart
                 </NavRoute>
                 <LoginButton>
                   <NavRoute href='signin'>

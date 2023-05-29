@@ -93,6 +93,12 @@ const Drawer = ({ isOpen, toggleDrawer }) => {
                   onClick={toggleDrawer} >
                     Get Started
                 </NavRoute>
+                <NavRoute 
+                href="cart" 
+                key="cart"
+                onClick={toggleDrawer}>
+                  Cart
+                </NavRoute>
 
           </NavRoutes>
           <LoginButton>

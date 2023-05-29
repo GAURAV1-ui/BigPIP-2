@@ -19,7 +19,7 @@ const Plan = () => {
                 <button className={showOneStep ? styles.plan_content_btns_onestep : styles.plan_content_btns_standard} onClick={() => toggleAccountType()}>1-Step Evaluation</button>
                 <button className={showOneStep ? styles.plan_content_btns_standard : styles.plan_content_btns_onestep} onClick={() => toggleAccountType()}>Standard Evaluation</button>
                 </div>
-                <div className={styles.plan_content_tables}>
+                {/* <div className={styles.plan_content_tables}>
                     {showOneStep && <div className={styles.plan_content_tables_grid_onestep}>
                         <div className={styles.header_1}>1-Step Evaluation</div>
                         <div className={styles.header_2}>$10,000</div>
@@ -80,7 +80,7 @@ const Plan = () => {
                         <div className={styles.plan_btn_5}><button>Choose Plan</button></div>
                         <div className={styles.plan_btn_6}><button>Choose Plan</button></div>
                     </div>}
-                </div>
+                </div> */}
         {/* <div className ={styles.plan_table} style={{overflowX:"auto"}}>
             <table cellspacing='0'>
             <tr className={styles.row}>
@@ -126,6 +126,59 @@ const Plan = () => {
   </tr>
 </table>
   </div> */}
+
+<div className={styles.scroll_container}>
+  <table className={`${styles.table} ${styles.scroll}`}>
+    <thead>
+      <tr>
+        <td style= {{backgroundColor: "#0C3A08", color:"white",fontSize: "20px"}}>1-STEP EVAL.</td>
+        <td>$10,000</td>
+        <td>$20,000</td>
+        <td>$50,000</td>
+        <td>$1,00,000</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Target</td>
+        <td>Phase 1 Target: 10%</td>
+
+      </tr>
+      <tr>
+        <td>Minimum Trading Days</td>
+        <td>5 Days</td>
+      </tr>
+      <tr>
+        <td>Maximum Trading Days</td>
+        {/* <td>The Dark Knight</td>
+        <td>Action, Crime, Drama, Thriller</td>
+        <td>2008</td>
+        <td>Christopher Nolan</td> */}
+      </tr>
+      <tr>
+        <td>Available Leverage</td>
+        {/* <td>The Godfather: Part II</td>
+        <td>Crime, Drama</td>
+        <td>1974</td>
+        <td>Francis Ford Coppola</td> */}
+      </tr>
+      <tr>
+        <td>Profit Split</td>
+        {/* <td>12 Angry Men</td>
+        <td>Crime, Drama</td>
+        <td>1957</td>
+        <td>Sidney Lumet</td> */}
+      </tr>
+      <tr>
+        <td>Refundable Registration Fee</td>
+        {/* <td>12 Angry Men</td>
+        <td>Crime, Drama</td>
+        <td>1957</td>
+        <td>Sidney Lumet</td> */}
+      </tr>
+    </tbody>
+  </table>
+</div>
 
     </div>
     </div>
