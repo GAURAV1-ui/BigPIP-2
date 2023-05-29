@@ -11,6 +11,7 @@ const Plan = () => {
     }
 
     return (
+      <div>
         <div className={styles.plan}>
             <div className={styles.plan_content}>
                 <h3 className={styles.plan_content_h}>Choose your Account Type</h3>
@@ -19,8 +20,10 @@ const Plan = () => {
                 <button className={showOneStep ? styles.plan_content_btns_onestep : styles.plan_content_btns_standard} onClick={() => toggleAccountType()}>1-Step Evaluation</button>
                 <button className={showOneStep ? styles.plan_content_btns_standard : styles.plan_content_btns_onestep} onClick={() => toggleAccountType()}>Standard Evaluation</button>
                 </div>
+                </div>
+                </div>
                 {/* <div className={styles.plan_content_tables}>
-                    {showOneStep && <div className={styles.plan_content_tables_grid_onestep}>
+                    {showOneStep && <div className={styles.plan_content_tables_grid_onestep} style={{overflowX:"auto"}}>
                         <div className={styles.header_1}>1-Step Evaluation</div>
                         <div className={styles.header_2}>$10,000</div>
                         <div className={styles.header_3}>$10,000</div>
@@ -132,46 +135,46 @@ const Plan = () => {
     <thead>
       <tr>
         <td style= {{backgroundColor: "#0C3A08", color:"white",fontSize: "20px"}}>1-STEP EVAL.</td>
-        <td>$10,000</td>
-        <td>$20,000</td>
-        <td>$50,000</td>
-        <td>$1,00,000</td>
+        <th>$10,000</th>
+        <th>$20,000</th>
+        <th>$50,000</th>
+        <th>$1,00,000</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Target</td>
-        <td></td>
-        <td></td>
         <td>Phase 1 Target: 10%</td>
+        <td></td>
+        <td></td>
         <td></td>
       </tr>
       <tr>
         <td>Minimum Trading Days</td>
-        <td></td>
-        <td></td>
         <td>5 Days</td>
+        <td></td>
+        <td></td>  
         <td></td>
       </tr>
       <tr>
         <td>Maximum Trading Days</td>
-        <td></td>
-        <td></td>
         <td>Unlimited</td>
+        <td></td>
+        <td></td>
         <td></td>
       </tr>
       <tr>
         <td>Available Leverage</td>
-        <td></td>
-        <td></td>
         <td>1:100</td>
+        <td></td>
+        <td></td>
         <td></td>
       </tr>
       <tr>
         <td>Profit Split</td>
-        <td></td>
-        <td></td>
         <td>70%</td>
+        <td></td>
+        <td></td>
         <td></td>
       </tr>
       <tr>
@@ -183,16 +186,15 @@ const Plan = () => {
       </tr>
       <tr>
         <td></td>
-        <td><button>Choose Plan</button></td>
-        <td><button>Choose Plan</button></td>
-        <td><button>Choose Plan</button></td>
-        <td><button>Choose Plan</button></td>
+        <td><button className={styles.plan_buttons}>Choose Plan</button></td>
+        <td><button className={styles.plan_buttons}>Choose Plan</button></td>
+        <td><button className={styles.plan_buttons}>Choose Plan</button></td>
+        <td><button className={styles.plan_buttons}>Choose Plan</button></td>
       </tr>
     </tbody>
   </table>
 </div>
 
-    </div>
     </div>
     )
 }

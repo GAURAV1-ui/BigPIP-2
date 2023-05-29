@@ -294,7 +294,31 @@
   }
    */
 
-   .plan_content_btns {
+   .plan {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+  }
+  
+  .plan_content_h {
+    color: #0c3a08;
+    font-size: 40px;
+    margin-bottom: 0.7rem;
+    text-align: center;
+  }
+  .plan_content_p {
+    color: #0c3a08;
+    width: 70%;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    margin: auto;
+  }
+
+  .plan_content_btns {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -310,6 +334,27 @@
     font-weight: bold;
     font-size: 1rem;
   }
+  
+  .plan_content_btns_onestep {
+    color: white;
+    border: none;
+    background: #0a3100;
+    padding: 1rem;
+    width: 40%;
+    border-radius: 1rem;
+    
+  }
+  
+  .plan_content_btns_standard {
+    width: 40%;
+    color: black;
+    border: 2px solid;
+    border-color: #0a3100;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+    
+  }
 
    .table {
     width: 100%;
@@ -320,7 +365,14 @@
   .table td {
     padding: 7px 10px;
     text-align: center;
-    /* border: 1px solid; */
+    min-width: 150px;
+  }
+
+  .table th {
+    padding: 15px 30px;
+    font-weight: 500;
+    text-align: center;
+    background: #FEE2CB;
   }
 
   .scroll_container {
@@ -328,7 +380,7 @@
     margin-bottom: 40px;
     border-left: 1px solid;
     border-right: 1px solid;
-    max-width: 1200px;
+    max-width: 1120px;
     margin: 40px auto;
     border: 1px solid;
     border-radius: 10px;
@@ -340,11 +392,22 @@
   .scroll td:first-of-type {
     position: sticky;
     left: 0;
-    padding: 1rem 0.1rem;
-    
+    padding: 1rem 0.5rem;
     border: none;
     background: #FEE2CB;
     color: #212121;
+  }
+
+  .plan_buttons {
+    color:#fff;
+    background-color:#1C1C1C;
+  }
+
+  @media only screen and (max-width: 1100px) {
+    
+  .scroll_container {
+    margin: 40px 25px;
+  }
   }
   /* .scroll td:first-of-type:after {
     content: "";
