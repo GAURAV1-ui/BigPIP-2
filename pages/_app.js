@@ -29,7 +29,7 @@ export default function App({ Component, pageProps }) {
       {/* <Provider> */}
       <Navigation />
       <Component {...pageProps} />
-      {/* <Footer /> */}
+      <Footer />
       {/* <Footer/> */}
       {/* </Provider>  */}
     </AuthUserProvider>

@@ -144,7 +144,7 @@ const Plan = () => {
     <tbody>
       <tr>
         <td>Target</td>
-        <td>Phase 1 Target: 10%</td>
+        <td>Phase | Target: 10%</td>
         <td></td>
         <td></td>
         <td></td>
