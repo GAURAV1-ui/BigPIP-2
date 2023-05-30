@@ -24,7 +24,6 @@ const Plan = (props) => {
         })
         .catch((err) => {});
     }, []);
-    console.log(plan);
 
 
     return (

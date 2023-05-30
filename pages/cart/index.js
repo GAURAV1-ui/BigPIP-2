@@ -68,7 +68,6 @@ const Cart = () => {
                   </div>
                   <div className={`${styles.cartSection} ${styles.removeWrap}`}>
                     <Link
-                      href="/"
                       className={styles.remove}
                       onClick={() => removeFromCart(item.id)}
                     >
@@ -90,7 +89,7 @@ const Cart = () => {
             onChange={(e) => setCouponCode(e.target.value)}
             value={couponCode}
           />
-          <a href="#" className={styles.btn}></a>
+          <Link href="#" className={styles.btn}></Link>
         </div>
 
         <div className={`${styles.subtotal} ${styles.cf}`}>

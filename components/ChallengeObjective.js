@@ -1,17 +1,24 @@
-import React, {useEffect} from 'react';
+import React, {useEffect,useState} from 'react';
 import axios from 'axios';
+import Link from 'next/link';
 import styles from '../styles/challengeObjective.module.css';
 
 const Challenge = () => {
+  const [challenge, setChallenge] = useState([]);
+  const [challenge1, setChallenge1] = useState([]);
 
-  
-    useEffect(() => {
-        axios.get("https://bigpip-cms.up.railway.app/api/home?populate=*")
-          .then((res) => {
-            // console.log(res.data);
-          }).catch((err) => {
-          })
-      }, []);
+  useEffect(() => {
+    axios
+      .get("https://bigpip-cms.up.railway.app/api/home?populate=evaluation.descriptionPoints")
+      .then((res) => {
+        const data = res.data.data;
+        // console.log(data.attributes.evaluation);
+        setChallenge(data.attributes.evaluation[0].descriptionPoints);
+        setChallenge1(data.attributes.evaluation[1].descriptionPoints);
+      })
+      .catch((err) => {});
+  }, []);
+  console.log(challenge)
   return (
     <div className={styles.objective}>
       <div className={styles.objective_content}>
@@ -26,11 +33,11 @@ const Challenge = () => {
               <h3>Standard Evaluation</h3>
               <p className={styles.objective_card_heading_p}>For experienced traders.</p>
             </div>
+            
             <div className={styles.objective_card_content}>
-              <p>&#10003; No maximum days</p>
-              <p>&#10003; Max Daily Loss: 5%</p>
-              <p>&#10003; Max Total Loss: 12%</p>
-              <p>&#10003; Account Sizes: $25k to $800k</p>
+            {challenge.map((data) =>(
+              <p>&#10003; {data.listItemValue}</p>
+              ))}
               <button className={styles.objective_card_content_btn_split}>
               &#43; Profit Split : 85%
               </button>
@@ -45,10 +52,9 @@ const Challenge = () => {
               <p className={styles.objective_card_heading_p}>Get Funded by skipping one step</p>
             </div>
             <div className={styles.objective_card_content}>
-              <p>&#10003; No Maximum Days</p>
-              <p>&#10003; Max Daily Loss: 5%</p>
-              <p>&#10003; Max Total Loss: 5%</p>
-              <p>&#10003; Account Sizes $25k to $200k</p>
+            {challenge1.map((data) =>(
+              <p>&#10003; {data.listItemValue}</p>
+              ))}
               <button className={styles.objective_card_content_btn_split}>
               &#43; Profit Split: 70%
               </button>
