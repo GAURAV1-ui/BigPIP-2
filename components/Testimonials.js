@@ -13,13 +13,13 @@ const Testimonials = () => {
       .get("https://bigpip-cms.up.railway.app/api/testimonials?populate=*")
       .then((res) => {
         const data = res.data.data;
-        console.log(data);
+        // console.log(data);
         setTestimmonial(data);
       })
       .catch((err) => {});
   }, []);
 
-  console.log(testimonial);
+  // console.log(testimonial);
 
   return (
     <>
@@ -134,12 +134,12 @@ const Testimonials = () => {
   );
 };
 
-export async function getServerSideProps() {
-  const res = await fetch(
-    `https://bigpip-cms.up.railway.app/api/testimonials?populate=*`
-  );
-  const data = await res.json();
-  return { props: { data } };
-}
+// export async function getServerSideProps() {
+//   const res = await fetch(
+//     `https://bigpip-cms.up.railway.app/api/testimonials?populate=*`
+//   );
+//   const data = await res.json();
+//   return { props: { data } };
+// }
 
 export default Testimonials;

@@ -1,14 +1,31 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import styles from '../styles/plan.module.css';
+import axios from 'axios';
 
-const Plan = () => {
+const Plan = (props) => {
     const [showOneStep, setShowOneStep] = useState(true);
     const [showStandard, setShowStandard] = useState(false);
+    const [plan, setPlan] = useState([]);
+    const [plan1, setPlan1] = useState([]);
 
     const toggleAccountType = () => {
         setShowOneStep((showOneStep) => !showOneStep);
         setShowStandard((showStandard) => !showStandard);
     }
+
+    useEffect(() => {
+      axios
+        .get("https://bigpip-cms.up.railway.app/api/home?populate=evaluation.plans")
+        .then((res) => {
+          const data = res.data.data;
+          // console.log(data.attributes.evaluation);
+          setPlan(data.attributes.evaluation[1].plans);
+          setPlan1(data.attributes.evaluation[0].plans);
+        })
+        .catch((err) => {});
+    }, []);
+    console.log(plan);
+
 
     return (
       <div>
@@ -22,167 +39,65 @@ const Plan = () => {
                 </div>
                 </div>
                 </div>
-                {/* <div className={styles.plan_content_tables}>
-                    {showOneStep && <div className={styles.plan_content_tables_grid_onestep} style={{overflowX:"auto"}}>
-                        <div className={styles.header_1}>1-Step Evaluation</div>
-                        <div className={styles.header_2}>$10,000</div>
-                        <div className={styles.header_3}>$10,000</div>
-                        <div className={styles.header_4}>$10,000</div>
-                        <div className={styles.header_5}>$10,000</div>
-                        <div className={styles.target}>Target</div>
-                        <div className={styles.target_value}>Phase | Target: 10%</div>
-                        <div className={styles.min_trade}>Minimum Trading Days</div>
-                        <div className={styles.min_trade_days}>5 Days</div>
-                        <div className={styles.max_trade}>Maximum Trading Days</div>
-                        <div className={styles.max_trade_days}>Unlimited</div>
-                        <div className={styles.leverage}>Available Leverage</div>
-                        <div className={styles.leverage_value}>1:100</div>
-                        <div className={styles.profit}>Profit Split</div>
-                        <div className={styles.profit_value}>70%</div>
-                        <div className={styles.refund}>Refundable Registration Fee</div>
-                        <div className={styles.refund_value_1}>$99</div>
-                        <div className={styles.refund_value_2}>$189</div>
-                        <div className={styles.refund_value_3}>$399</div>
-                        <div className={styles.refund_value_4}>$749</div>
-                        <div className={styles.plan_area}>Plan</div>
-                        <div className={styles.plan_btn_1}><button>Choose Plan</button></div>
-                        <div className={styles.plan_btn_2}><button>Choose Plan</button></div>
-                        <div className={styles.plan_btn_3}><button>Choose Plan</button></div>
-                        <div className={styles.plan_btn_4}><button>Choose Plan</button></div>
-                    </div>}
-                    {showStandard && <div className={styles.plan_content_tables_grid_standard}>
-                        <div className={styles.header_1}>1-Step Evaluation</div>
-                        <div className={styles.header_2}>$25,000</div>
-                        <div className={styles.header_3}>$50,000</div>
-                        <div className={styles.header_4}>$100,000</div>
-                        <div className={styles.header_5}>$200,000</div>
-                        <div className={styles.header_6}>$500,000</div>
-                        <div className={styles.header_7}>$800,000</div>
-                        <div className={styles.target}>Target</div>
-                        <div className={styles.target_value}>Phase | Target: 10%</div>
-                        <div className={styles.min_trade}>Minimum Trading Days</div>
-                        <div className={styles.min_trade_days}>2 Days</div>
-                        <div className={styles.max_trade}>Maximum Trading Days</div>
-                        <div className={styles.max_trade_days}>Unlimited</div>
-                        <div className={styles.leverage}>Available Leverage</div>
-                        <div className={styles.leverage_value}>1:200</div>
-                        <div className={styles.profit}>Profit Split</div>
-                        <div className={styles.profit_value}>80%</div>
-                        <div className={styles.refund}>Refundable Registration Fee</div>
-                        <div className={styles.refund_value_1}>$199</div>
-                        <div className={styles.refund_value_2}>$299</div>
-                        <div className={styles.refund_value_3}>$499</div>
-                        <div className={styles.refund_value_4}>$949</div>
-                        <div className={styles.refund_value_5}>$2199</div>
-                        <div className={styles.refund_value_6}>$3499</div>
-                        <div className={styles.plan_area}>Plan</div>
-                        <div className={styles.plan_btn_1}><button>Choose Plan</button></div>
-                        <div className={styles.plan_btn_2}><button>Choose Plan</button></div>
-                        <div className={styles.plan_btn_3}><button>Choose Plan</button></div>
-                        <div className={styles.plan_btn_4}><button>Choose Plan</button></div>
-                        <div className={styles.plan_btn_5}><button>Choose Plan</button></div>
-                        <div className={styles.plan_btn_6}><button>Choose Plan</button></div>
-                    </div>}
-                </div> */}
-        {/* <div className ={styles.plan_table} style={{overflowX:"auto"}}>
-            <table cellspacing='0'>
-            <tr className={styles.row}>
-    <th style={{backgroundColor: "#0A3100", color: "white"}}>1-Step Evaluation</th>
-    <th style={{backgroundColor: "#FEE2CB"}}>$10,000</th>
-    <th style={{backgroundColor: "#FEE2CB"}}>$10,000</th>
-    <th style={{backgroundColor: "#FEE2CB"}}>$10,000</th>
-    <th style={{backgroundColor: "#FEE2CB"}}>$10,000</th>
-  </tr>
-  <tr className={styles.row}>
-    <td style={{backgroundColor: "#FEE2CB"}}>Target</td>
-    <td colspan="4">Phase | Target: 10%</td>
-  </tr>
-  <tr className={styles.row}>
-    <td style={{backgroundColor: "#FEE2CB"}}>Minimum Trading Days</td>
-    <td colspan='4'>5 Days</td>
-  </tr>
-  <tr className={styles.row}>
-    <td style={{backgroundColor: "#FEE2CB"}}>Maximum Trading Days</td>
-    <td colspan='4'>Unlimited</td>
-  </tr>
-  <tr className={styles.row}>
-    <td style={{backgroundColor: "#FEE2CB"}}>Available Leverage</td>
-    <td colspan='4'>1:100</td>
-  </tr>
-  <tr className={styles.row}>
-    <td style={{backgroundColor: "#FEE2CB"}}>Profit Split</td>
-    <td colspan='4'>70%</td>
-  </tr>
-  <tr className={styles.row}>
-    <td style={{backgroundColor: "#FEE2CB"}}>Refundable Registration Fees</td>
-    <td>$99</td>
-    <td>$189</td>
-    <td>$399</td>
-    <td>$749</td>
-  </tr>
-  <tr className={styles.row}>
-    <td style={{backgroundColor: "#FEE2CB"}}>Plan</td>
-    <td><button className={styles.plan_btn}>Choose Plan</button></td>
-    <td><button className={styles.plan_btn}>Choose Plan</button></td>
-    <td><button className={styles.plan_btn}>Choose Plan</button></td>
-    <td><button className={styles.plan_btn}>Choose Plan</button></td>
-  </tr>
-</table>
-  </div> */}
+
 
 <div className={styles.scroll_container}>
-  {showOneStep && <table className={`${styles.table} ${styles.scroll}`}>
+
+{showOneStep && 
+ <table className={`${styles.table} ${styles.scroll}`}>
+
     <thead>
       <tr>
         <td style= {{backgroundColor: "#0C3A08", color:"white",fontSize: "18px"}}>1-STEP EVAL.</td>
-        <th>$10,000</th>
-        <th>$20,000</th>
-        <th>$50,000</th>
-        <th>$1,00,000</th>
+        {plan.map(data => (
+          <th>{`$${data.totalCost}`}</th>
+          ))}
       </tr>
+      
     </thead>
+  
     <tbody>
       <tr>
         <td>Target</td>
-        <td>Phase | Target: 10%</td>
+        {/* <td>{plan[0].target}</td> */}
+        {plan.map(data => (
+          <td>{data.target}</td>
+          ))}
+        {/* <td></td>
         <td></td>
-        <td></td>
-        <td></td>
+        <td></td> */}
       </tr>
       <tr>
         <td>Minimum Trading Days</td>
-        <td>5 Days</td>
-        <td></td>
-        <td></td>  
-        <td></td>
+        {plan.map(data => (
+          <td>{data.minTradingDays}</td>
+          ))}
       </tr>
       <tr>
         <td>Maximum Trading Days</td>
-        <td>Unlimited</td>
-        <td></td>
-        <td></td>
-        <td></td>
+       {plan.map(data => (
+          <td>{data.maxTradingDays}</td>
+          ))}
       </tr>
       <tr>
         <td>Available Leverage</td>
-        <td>1:100</td>
-        <td></td>
-        <td></td>
-        <td></td>
+        {/* <td>{plan[0].availableLeverage}</td> */}
+        {plan.map(data => (
+          <td>{data.availableLeverage}</td>
+          ))}
       </tr>
       <tr>
         <td>Profit Split</td>
-        <td>70%</td>
-        <td></td>
-        <td></td>
-        <td></td>
+        {/* <td>{plan[0].profitSplit}</td> */}
+        {plan.map(data => (
+          <td>{data.profitSplit}</td>
+          ))}
       </tr>
       <tr>
         <td>Refundable Registration Fee</td>
-        <td>$99</td>
-        <td>$189</td>
-        <td>$399</td>
-        <td>$749</td>
+        {plan.map(data => (
+          <td>{`$${data.refundableRegFee}`}</td>
+          ))}
       </tr>
       <tr>
         <td></td>
@@ -192,64 +107,54 @@ const Plan = () => {
         <td><button className={styles.plan_buttons}>Choose Plan</button></td>
       </tr>
     </tbody>
-  </table>}
+  </table>
+        }
 
   { showStandard && <table className={`${styles.table} ${styles.scroll}`}>
     <thead>
       <tr>
-        <td style= {{backgroundColor: "#0C3A08", color:"white",fontSize: "18px"}}>1-STEP EVAL.</td>
-        <th>$25,000</th>
-        <th>$50,000</th>
-        <th>$1,00,000</th>
-        <th>$2,00,000</th>
-        <th>$5,00,0000</th>
-        <th>$8,00,000</th>
+        <td style= {{backgroundColor: "#0C3A08", color:"white",fontSize: "18px"}}>STANDARD EVAL.</td>
+        {plan1.map(data => (
+          <th>{`$${data.totalCost}`}</th>
+          ))}
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Target</td>
-        <td>Phase | Target: 10%</td>
-        <td></td>
-        <td></td>
-        <td></td>
+        {plan1.map(data => (
+          <td>{data.target}</td>
+          ))}
       </tr>
       <tr>
         <td>Minimum Trading Days</td>
-        <td>2 Days</td>
-        <td></td>
-        <td></td>  
-        <td></td>
+        {plan1.map(data => (
+          <td>{data.minTradingDays}</td>
+          ))}
       </tr>
       <tr>
         <td>Maximum Trading Days</td>
-        <td>Unlimited</td>
-        <td></td>
-        <td></td>
-        <td></td>
+        {plan1.map(data => (
+          <td>{data.maxTradingDays}</td>
+          ))}
       </tr>
       <tr>
         <td>Available Leverage</td>
-        <td>1:200</td>
-        <td></td>
-        <td></td>
-        <td></td>
+        {plan1.map(data => (
+          <td>{data.availableLeverage}</td>
+          ))}
       </tr>
       <tr>
         <td>Profit Split</td>
-        <td>80%</td>
-        <td></td>
-        <td></td>
-        <td></td>
+        {plan1.map(data => (
+          <td>{data.profitSplit}</td>
+          ))}
       </tr>
       <tr>
         <td>Refundable Registration Fee</td>
-        <td>$199</td>
-        <td>$299</td>
-        <td>$499</td>
-        <td>$949</td>
-        <td>$2199</td>
-        <td>$3499</td>
+        {plan1.map(data => (
+          <td>{`$${data.refundableRegFee}`}</td>
+          ))}
       </tr>
       <tr>
         <td></td>
@@ -268,5 +173,13 @@ const Plan = () => {
     </div>
     )
 }
+
+// export async function getServerSideProps() {
+//   const res = await fetch(
+//     `https://bigpip-cms.up.railway.app/api/testimonials?populate=*`
+//   );
+//   const data = await res.json();
+//   return { props: { data } };
+// }
 
 export default Plan;
