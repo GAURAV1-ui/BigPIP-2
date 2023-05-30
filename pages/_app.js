@@ -7,6 +7,7 @@ import "../styles/globals.css";
 import { AuthUserProvider } from "@/utils/contexts/AuthContext";
 import { init, trackPageView, trackConversion } from "goaffpro-client";
 import { useEffect } from "react";
+import { CartProvider } from "@/utils/contexts/CartContext";
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
@@ -31,11 +32,12 @@ export default function App({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-
-      {/* <Provider> */}
-      <Navigation />
-      <Component {...pageProps} />
-      <Footer />
+      <CartProvider>
+        {/* <Provider> */}
+        <Navigation />
+        <Component {...pageProps} />
+        <Footer />
+      </CartProvider>
       {/* <Footer/> */}
       {/* </Provider>  */}
     </AuthUserProvider>
