@@ -25,7 +25,6 @@ const Signin = (props) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         const user = result.user;
-
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -138,7 +137,7 @@ const Signin = (props) => {
               </div>
               <div className={styles.signin_input}>
                 <span className={styles.signin_input_label}>
-                  Don't have an account?{" "}
+                  Don&apos;t have an account?{" "}
                   <span
                     style={{ textDecoration: "underline", cursor: "pointer" }}
                   >
@@ -158,6 +157,5 @@ const Signin = (props) => {
     </div>
   );
 };
-
 
 export default Signin;

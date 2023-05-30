@@ -11,8 +11,6 @@ const Affliate = (props) => {
   const [password, setPassword] = useState("");
   const passwordType = toggleHide ? "text" : "password";
 
-
-
   const toggleHideIcon = () => {
     setToggleHide((prevToggleHide) => !prevToggleHide);
   };
@@ -26,9 +24,7 @@ const Affliate = (props) => {
         <div className={styles.sigin_form}>
           <h2 className={styles.signin_form_heading}>Sign in</h2>
           <div className={styles.signin_oauth}>
-            <div
-              className={styles.sigin_oauth_google_text}
-            >
+            <div className={styles.sigin_oauth_google_text}>
               <FcGoogle />
               <span>&nbsp;Continue with Google</span>
             </div>
@@ -91,15 +87,11 @@ const Affliate = (props) => {
                 </span>
               </div>
               <div className={styles.signin_input}>
-                <button
-                  className={styles.signin_input_button}
-                >
-                  Sign in
-                </button>
+                <button className={styles.signin_input_button}>Sign in</button>
               </div>
               <div className={styles.signin_input}>
                 <span className={styles.signin_input_label}>
-                  Don't have an account?{" "}
+                  Don&apos;t have an account?{" "}
                   <span
                     style={{ textDecoration: "underline", cursor: "pointer" }}
                   >
@@ -119,6 +111,5 @@ const Affliate = (props) => {
     </div>
   );
 };
-
 
 export default Affliate;
