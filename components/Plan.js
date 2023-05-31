@@ -1,6 +1,8 @@
 import { useState,useEffect } from 'react';
 import styles from '../styles/plan.module.css';
 import axios from 'axios';
+import { toast,ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Plan = (props) => {
     const [showOneStep, setShowOneStep] = useState(true);
@@ -58,13 +60,9 @@ const Plan = (props) => {
     <tbody>
       <tr>
         <td>Target</td>
-        {/* <td>{plan[0].target}</td> */}
         {plan.map(data => (
           <td>{data.target}</td>
           ))}
-        {/* <td></td>
-        <td></td>
-        <td></td> */}
       </tr>
       <tr>
         <td>Minimum Trading Days</td>
@@ -104,6 +102,7 @@ const Plan = (props) => {
         <td><button className={styles.plan_buttons}>Choose Plan</button></td>
         <td><button className={styles.plan_buttons}>Choose Plan</button></td>
         <td><button className={styles.plan_buttons}>Choose Plan</button></td>
+        <ToastContainer/>
       </tr>
     </tbody>
   </table>
@@ -163,6 +162,7 @@ const Plan = (props) => {
         <td><button className={styles.plan_buttons}>Choose Plan</button></td>
         <td><button className={styles.plan_buttons}>Choose Plan</button></td>
         <td><button className={styles.plan_buttons}>Choose Plan</button></td>
+        <ToastContainer/>
       </tr>
     </tbody>
   </table>
