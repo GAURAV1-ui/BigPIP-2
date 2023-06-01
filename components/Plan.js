@@ -80,8 +80,8 @@ const Plan = (props) => {
                 >
                   1-STEP EVAL.
                 </td>
-                {plan.map((data) => (
-                  <th>{`$${data.totalCost}`}</th>
+                {plan.map((data, i) => (
+                  <th key={i}>{`$${data.totalCost}`}</th>
                 ))}
               </tr>
             </thead>
@@ -89,40 +89,40 @@ const Plan = (props) => {
             <tbody>
               <tr>
                 <td>Target</td>
-                {plan.map((data) => (
-                  <td>{data.target}</td>
+                {plan.map((data, i) => (
+                  <td key={i}>{data.target}</td>
                 ))}
               </tr>
               <tr>
                 <td>Minimum Trading Days</td>
-                {plan.map((data) => (
-                  <td>{data.minTradingDays}</td>
+                {plan.map((data, i) => (
+                  <td key={i}>{data.minTradingDays}</td>
                 ))}
               </tr>
               <tr>
                 <td>Maximum Trading Days</td>
-                {plan.map((data) => (
-                  <td>{data.maxTradingDays}</td>
+                {plan.map((data, i) => (
+                  <td key={i}>{data.maxTradingDays}</td>
                 ))}
               </tr>
               <tr>
                 <td>Available Leverage</td>
                 {/* <td>{plan[0].availableLeverage}</td> */}
-                {plan.map((data) => (
-                  <td>{data.availableLeverage}</td>
+                {plan.map((data, i) => (
+                  <td key={i}>{data.availableLeverage}</td>
                 ))}
               </tr>
               <tr>
                 <td>Profit Split</td>
                 {/* <td>{plan[0].profitSplit}</td> */}
-                {plan.map((data) => (
-                  <td>{data.profitSplit}</td>
+                {plan.map((data, i) => (
+                  <td key={i}>{data.profitSplit}</td>
                 ))}
               </tr>
               <tr>
                 <td>Refundable Registration Fee</td>
-                {plan.map((data) => (
-                  <td>{`$${data.refundableRegFee}`}</td>
+                {plan.map((data, i) => (
+                  <td key={i}>{`$${data.refundableRegFee}`}</td>
                 ))}
               </tr>
               <tr>
@@ -172,46 +172,46 @@ const Plan = (props) => {
                 >
                   STANDARD EVAL.
                 </td>
-                {plan1.map((data) => (
-                  <th>{`$${data.totalCost}`}</th>
+                {plan1.map((data, i) => (
+                  <th key={i}>{`$${data.totalCost}`}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Target</td>
-                {plan1.map((data) => (
-                  <td>{data.target}</td>
+                {plan1.map((data, i) => (
+                  <td key={i}>{data.target}</td>
                 ))}
               </tr>
               <tr>
                 <td>Minimum Trading Days</td>
-                {plan1.map((data) => (
-                  <td>{data.minTradingDays}</td>
+                {plan1.map((data, i) => (
+                  <td key={i}>{data.minTradingDays}</td>
                 ))}
               </tr>
               <tr>
                 <td>Maximum Trading Days</td>
-                {plan1.map((data) => (
-                  <td>{data.maxTradingDays}</td>
+                {plan1.map((data, i) => (
+                  <td key={i}>{data.maxTradingDays}</td>
                 ))}
               </tr>
               <tr>
                 <td>Available Leverage</td>
-                {plan1.map((data) => (
-                  <td>{data.availableLeverage}</td>
+                {plan1.map((data, i) => (
+                  <td key={i}>{data.availableLeverage}</td>
                 ))}
               </tr>
               <tr>
                 <td>Profit Split</td>
-                {plan1.map((data) => (
-                  <td>{data.profitSplit}</td>
+                {plan1.map((data, i) => (
+                  <td key={i}>{data.profitSplit}</td>
                 ))}
               </tr>
               <tr>
                 <td>Refundable Registration Fee</td>
-                {plan1.map((data) => (
-                  <td>{`$${data.refundableRegFee}`}</td>
+                {plan1.map((data, i) => (
+                  <td key={i}>{`$${data.refundableRegFee}`}</td>
                 ))}
               </tr>
               <tr>
