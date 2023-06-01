@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../../styles/paymentsuccess.module.css";
+import { useRouter } from "next/router";
+import { API } from "@/utils/api/config";
 
 const PaymentScuccess = () => {
+  const router = useRouter();
+  useEffect(() => {
+    async function updateOrderStatus() {
+      const txnToken = router.query.txnToken;
+      const res = await API.put("/orders/0", {
+        txnToken,
+        status: "successful",
+      });
+    }
+
+    if (router?.query?.txnToken) {
+      updateOrderStatus();
+    }
+  }, [router.query]);
+
   return (
     <div className={styles.paymentSuccess}>
       <div className={styles.card}>
