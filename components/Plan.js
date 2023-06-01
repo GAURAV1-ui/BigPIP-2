@@ -1,6 +1,8 @@
 import { useState,useEffect } from 'react';
+
 import styles from '../styles/plan.module.css';
 import axios from 'axios';
+import { useCart } from "@/utils/contexts/CartContext";
 import { toast,ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -9,18 +11,28 @@ const Plan = (props) => {
     const [showStandard, setShowStandard] = useState(false);
     const [plan, setPlan] = useState([]);
     const [plan1, setPlan1] = useState([]);
+    const {addToCart} = useCart();
 
     const toggleAccountType = () => {
         setShowOneStep((showOneStep) => !showOneStep);
         setShowStandard((showStandard) => !showStandard);
     }
+  
+    const addToCartHandler = (data) => {
+     
+      addToCart({
+        id: data.id,
+        amount: data.refundableRegFee,
+        target: data.target
+      });
+    };
 
     useEffect(() => {
       axios
         .get("https://bigpip-cms.up.railway.app/api/home?populate=evaluation.plans")
         .then((res) => {
           const data = res.data.data;
-          // console.log(data.attributes.evaluation);
+          // console.log(data.attributes.evaluation[1]);
           setPlan(data.attributes.evaluation[1].plans);
           setPlan1(data.attributes.evaluation[0].plans);
         })
@@ -43,68 +55,60 @@ const Plan = (props) => {
 
 
 <div className={styles.scroll_container}>
-
 {showOneStep && 
  <table className={`${styles.table} ${styles.scroll}`}>
+ {plan.map(data => (
 
-    <thead>
-      <tr>
-        <td style= {{backgroundColor: "#0C3A08", color:"white",fontSize: "18px"}}>1-STEP EVAL.</td>
-        {plan.map(data => (
-          <th>{`$${data.totalCost}`}</th>
-          ))}
-      </tr>
-      
-    </thead>
-  
-    <tbody>
-      <tr>
-        <td>Target</td>
-        {plan.map(data => (
-          <td>{data.target}</td>
-          ))}
-      </tr>
-      <tr>
+<tbody>
+  <tr key={data.id}>
+  <td>{`$${data.totalCost}`}</td>
+  <td>{data.target}</td>
+  <td>{data.minTradingDays}</td>
+  <td>{data.minTradingDays}</td>
+  <td>{data.maxTradingDays}</td>
+  <td>{data.availableLeverage}</td>
+  <td>{data.profitSplit}</td>
+  <td>{`$${data.refundableRegFee}`}</td>
+  <td><button className={styles.plan_buttons} onClick = {()=>addToCartHandler(data)}>Choose Plan</button></td>
+  </tr>
+  </tbody>
+
+
+    ))}
+      {/* <tr>
         <td>Minimum Trading Days</td>
-        {plan.map(data => (
+
           <td>{data.minTradingDays}</td>
-          ))}
       </tr>
       <tr>
         <td>Maximum Trading Days</td>
-       {plan.map(data => (
           <td>{data.maxTradingDays}</td>
-          ))}
+
       </tr>
       <tr>
         <td>Available Leverage</td>
-        {/* <td>{plan[0].availableLeverage}</td> */}
-        {plan.map(data => (
           <td>{data.availableLeverage}</td>
-          ))}
+
       </tr>
       <tr>
         <td>Profit Split</td>
-        {/* <td>{plan[0].profitSplit}</td> */}
-        {plan.map(data => (
+
           <td>{data.profitSplit}</td>
-          ))}
       </tr>
       <tr>
         <td>Refundable Registration Fee</td>
-        {plan.map(data => (
           <td>{`$${data.refundableRegFee}`}</td>
-          ))}
       </tr>
       <tr>
         <td></td>
         <td><button className={styles.plan_buttons}>Choose Plan</button></td>
         <td><button className={styles.plan_buttons}>Choose Plan</button></td>
         <td><button className={styles.plan_buttons}>Choose Plan</button></td>
-        <td><button className={styles.plan_buttons}>Choose Plan</button></td>
+        
         <ToastContainer/>
       </tr>
-    </tbody>
+    </tbody> */}
+
   </table>
         }
 

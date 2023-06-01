@@ -24,7 +24,7 @@ const Cart = () => {
         <h1 className={styles.projTitle}>Cart</h1>
         <div className={`${styles.heading} ${styles.cf}`}>
           <h1 className={styles.heading1}>My Cart</h1>
-          <Link href="/" className={styles.continue}>
+          <Link href="#" className={styles.continue}>
             Continue Shopping
           </Link>
         </div>

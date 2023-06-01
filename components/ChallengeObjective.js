@@ -18,7 +18,7 @@ const Challenge = () => {
       })
       .catch((err) => {});
   }, []);
-  console.log(challenge)
+  // console.log(challenge)
   return (
     <div className={styles.objective}>
       <div className={styles.objective_content}>
