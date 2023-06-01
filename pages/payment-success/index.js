@@ -1,17 +1,25 @@
-import React,{useEffect,useState} from "react";
+
+import React, { useEffect } from "react";
 import styles from "../../styles/paymentsuccess.module.css";
-import {useLocation} from 'react-router-dom'
+import { useRouter } from "next/router";
+import { API } from "@/utils/api/config";
 
 const PaymentScuccess = () => {
-  
-const search = useLocation().search;
-const token =new URLSearchParams(search).get("sessionToken");
-console.log(token);
-useEffect (() =>{
-API.patch("/orders", {
-    status : successful,
-    txnToken: token
-})});
+  const router = useRouter();
+  useEffect(() => {
+    async function updateOrderStatus() {
+      const txnToken = router.query.txnToken;
+      const res = await API.put("/orders/0", {
+        txnToken,
+        status: "successful",
+      });
+    }
+
+    if (router?.query?.txnToken) {
+      updateOrderStatus();
+    }
+  }, [router.query]);
+
   return (
     <div className={styles.paymentSuccess}>
       <div className={styles.card}>
