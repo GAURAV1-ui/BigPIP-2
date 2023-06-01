@@ -40,8 +40,8 @@ const Cart = () => {
       const res = await API.post("/orders", {
         products: cartItems,
         customer: {
-          name: "Anurag",
-          email: "apal895@gmail.com",
+          name: currentUser.name,
+          email: currentUser.email,
         },
       });
       await stripe.redirectToCheckout({
