@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../styles/cart.module.css";
 import Link from "next/link";
 import { useCart } from "@/utils/contexts/CartContext";
+import { loadStripe } from "@stripe/stripe-js";
+import { API } from "@/utils/api/config";
+import { useAuth } from "@/utils/contexts/AuthContext";
+import { useRouter } from "next/router";
 
 const Cart = () => {
   const [discountAmount, setDiscountAmount] = useState(0);
   const [couponCode, setCouponCode] = useState("");
+
+  const router = useRouter();
 
   const {
     cartItems,
@@ -15,8 +21,36 @@ const Cart = () => {
     calculateTotal,
   } = useCart();
 
+  const { currentUser } = useAuth();
+
+  useEffect(() => {
+    if (currentUser === null) {
+      router.push("/signin");
+    }
+  }, [currentUser, router]);
+
   const subtotal = calculateSubtotal();
-  const total = calculateTotal();
+
+  const stripePromise = loadStripe(
+    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+  );
+  const handlePayment = async () => {
+    try {
+      const stripe = await stripePromise;
+      const res = await API.post("/orders", {
+        products: cartItems,
+        customer: {
+          name: "Anurag",
+          email: "apal895@gmail.com",
+        },
+      });
+      await stripe.redirectToCheckout({
+        sessionId: res.data.stripeSession.id,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div>
@@ -39,12 +73,14 @@ const Cart = () => {
               >
                 <div className={styles.infoWrap}>
                   <div className={styles.cartSection}>
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className={styles.itemImg}
-                    />
-                    <h3>{item.name}</h3>
+                    {item.image?.length && (
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className={styles.itemImg}
+                      />
+                    )}
+                    <h3>{item.title}</h3>
 
                     <p>
                       <input
@@ -69,7 +105,8 @@ const Cart = () => {
                   <div className={`${styles.cartSection} ${styles.removeWrap}`}>
                     <Link
                       className={styles.remove}
-                      onClick={() => removeFromCart(item.id)}
+                      onClick={() => removeFromCart(item)}
+                      href="#"
                     >
                       x
                     </Link>
@@ -107,10 +144,14 @@ const Cart = () => {
 
             <li className={`${styles.totalRow} ${styles.final}`}>
               <span className={styles.label}>Total</span>
-              <span className={styles.value}>${total}</span>
+              <span className={styles.value}>${calculateTotal()}</span>
             </li>
             <li className={styles.totalRow}>
-              <Link href="/" className={`${styles.btn} ${styles.continue}`}>
+              <Link
+                href="#"
+                onClick={handlePayment}
+                className={`${styles.btn} ${styles.continue}`}
+              >
                 Checkout
               </Link>
             </li>

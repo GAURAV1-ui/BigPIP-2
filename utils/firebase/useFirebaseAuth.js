@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import { getAuth } from "firebase/auth";
+import { getAuth, signOut } from "firebase/auth";
 import { app } from "./config";
 
 const formatAuthUser = (user) => ({
   uid: user.uid,
   email: user.email,
+  name: user.displayName,
 });
 
-const useFirebaseAuth =() => {
+const useFirebaseAuth = () => {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -33,7 +34,11 @@ const useFirebaseAuth =() => {
   return {
     currentUser,
     loading,
+    signOut: () => {
+      const auth = getAuth(app);
+      signOut(auth);
+    },
   };
-}
+};
 
 export default useFirebaseAuth;
