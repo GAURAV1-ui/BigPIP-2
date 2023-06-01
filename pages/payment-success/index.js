@@ -1,7 +1,23 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import styles from "../../styles/paymentsuccess.module.css";
+import {useLocation} from 'react-router-dom'
 
 const PaymentScuccess = () => {
+
+const[param,setParam] = useState(null);
+  
+  const location = useLocation();
+
+//   useEffect (() => {
+//     const queryParams = new URLSearchParams(location.search);
+//     const singleValue = queryParams.get('key');
+//     console.log(singleValue,'apple');
+// },[]);
+
+const query = new URLSearchParams(this.props.location.search);
+const token = query.get('session-token');
+console.log(token);
+  
   return (
     <div className={styles.paymentSuccess}>
       <div className={styles.card}>
