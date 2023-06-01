@@ -10,12 +10,22 @@ import {
   getAuth,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+import { useAuth } from "@/utils/contexts/AuthContext";
+import { useRouter } from "next/router";
 
 const Signin = (props) => {
   const [toggleHide, setToggleHide] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const passwordType = toggleHide ? "text" : "password";
+
+  const router = useRouter();
+
+  const { currentUser } = useAuth();
+
+  if (currentUser) {
+    router.push("/");
+  }
 
   const handleGoogleSignIn = () => {
     const provider = new GoogleAuthProvider();

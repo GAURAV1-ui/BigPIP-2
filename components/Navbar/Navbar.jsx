@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import { FaBars } from "react-icons/fa";
+import { useAuth } from "@/utils/contexts/AuthContext";
 
 // import logo from "";
 // import Menu from "./Menu";
@@ -78,24 +79,28 @@ const LoginButton = styled.button`
   padding: 8px 25px;
   font-weight: 700;
   font-size: 16px;
-  color:black;
+  color: black;
   background-color: white;
   border: 2px solid black;
   border-radius: 0.5rem;
   transition: 0.3s ease;
   align-self: flex-start;
-  z-index:1;
-  cursor:pointer;
-  &:hover{
+  z-index: 1;
+  cursor: pointer;
+  &:hover {
     transform: scale(1.1);
   }
 `;
 const Navbar = ({ toggleDrawer }) => {
-
   const router = useRouter();
   const clickImageHandler = () => {
     router.push("/");
-  }
+  };
+
+  const { currentUser, signOut } = useAuth();
+
+  console.log({ currentUser });
+
   return (
     <SNavbar>
       <NavContainer>
@@ -103,28 +108,44 @@ const Navbar = ({ toggleDrawer }) => {
           <FaBars />
         </DrawerButton>
         {/* <Image src={logo} onClick = {clickImageHandler} >BigPIP </Image> */}
-        <Image src="/logo.png" alt="/" onClick = {clickImageHandler} width={220} height={35}/>
+        <Image
+          src="/logo.png"
+          alt="/"
+          onClick={clickImageHandler}
+          width={220}
+          height={35}
+        />
         <RightNav>
           <NavRoutes>
-        
-                <NavRoute href="faq" key="faq">
-                  Faq
-                </NavRoute>
-                <NavRoute href="aboutus" key="aboutus">
-                  About us
-                </NavRoute>
-                <NavRoute href="getstarted" key="getstarted">
-                  Get Started
-                </NavRoute>
-                <NavRoute href="cart" key="cart">
-                  Cart
-                </NavRoute>
-                <LoginButton>
-                  <NavRoute href='signin'>
-                    Log in/ Sign up
-                  </NavRoute>
-                </LoginButton>
-          </NavRoutes>  
+            <NavRoute href="faq" key="faq">
+              Faq
+            </NavRoute>
+            <NavRoute href="aboutus" key="aboutus">
+              About us
+            </NavRoute>
+            <NavRoute href="getstarted" key="getstarted">
+              Get Started
+            </NavRoute>
+            <NavRoute href="cart" key="cart">
+              Cart
+            </NavRoute>
+            {currentUser ? (
+              <div
+                style={{
+                  color: "#0A4007",
+                  textDecoration: "underline",
+                  cursor: "pointer",
+                }}
+                onClick={signOut}
+              >
+                {currentUser?.name}
+              </div>
+            ) : (
+              <LoginButton>
+                <NavRoute href="signin">Log in/ Sign up</NavRoute>
+              </LoginButton>
+            )}
+          </NavRoutes>
         </RightNav>
       </NavContainer>
     </SNavbar>
@@ -132,4 +153,3 @@ const Navbar = ({ toggleDrawer }) => {
 };
 
 export default Navbar;
-
