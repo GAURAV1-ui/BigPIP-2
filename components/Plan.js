@@ -10,6 +10,8 @@ const Plan = (props) => {
   const [showStandard, setShowStandard] = useState(false);
   const [plan, setPlan] = useState([]);
   const [plan1, setPlan1] = useState([]);
+  const [standardEvaluation, setStandardEvaluation] = useState({});
+  const [oneStepEvaluation, setOneStepEvaluation] = useState({});
 
   const { addToCart } = useCart();
 
@@ -21,13 +23,20 @@ const Plan = (props) => {
   useEffect(() => {
     axios
       .get(
-        "https://bigpip-cms.up.railway.app/api/home?populate=evaluation.plans"
+        `${process.env.NEXT_PUBLIC_API_URL}/home?populate=evaluation.plans.product`
       )
       .then((res) => {
         const data = res.data.data;
         // console.log(data.attributes.evaluation);
         setPlan(data.attributes.evaluation[1].plans);
         setPlan1(data.attributes.evaluation[0].plans);
+        setStandardEvaluation(data.attributes.evaluation[0]);
+        setOneStepEvaluation(data.attributes.evaluation[1]);
+        // console.log({
+        //   first: data.attributes.evaluation[0].plans,
+        //   second: data.attributes.evaluation[1].plans,
+        //   all: data,
+        // });
       })
       .catch((err) => {});
   }, []);
@@ -50,7 +59,7 @@ const Plan = (props) => {
               }
               onClick={() => toggleAccountType()}
             >
-              1-Step Evaluation
+              {oneStepEvaluation?.title}
             </button>
             <button
               className={
@@ -60,7 +69,7 @@ const Plan = (props) => {
               }
               onClick={() => toggleAccountType()}
             >
-              Standard Evaluation
+              {standardEvaluation?.title}
             </button>
           </div>
         </div>
@@ -70,9 +79,8 @@ const Plan = (props) => {
         {showOneStep && (
           <table className={`${styles.table} ${styles.scroll}`}>
             <tbody>
-              <tr style={{ background: "#FEE2CB",
-    color: "#212121"}}>
-            <th
+              <tr style={{ background: "#FEE2CB", color: "#212121" }}>
+                <th
                   style={{
                     backgroundColor: "#0C3A08",
                     color: "white",
@@ -87,38 +95,42 @@ const Plan = (props) => {
                 <th>Available Leverage</th>
                 <th>Profit Split</th>
                 <th>Refundable Registration Fee</th>
-                </tr>
-            {plan.map((data, i) => (
-              <tr>
-                
-                <td key={i}>{`$${data.totalCost}`}</td>
-                  <td key={i}>{data.target}</td>
-                  <td key={i}>{data.minTradingDays}</td>
-                  <td key={i}>{data.maxTradingDays}</td>
-                  <td key={i}>{data.availableLeverage}</td>
-                  <td key={i}>{data.profitSplit}</td>
-                  <td key={i}>{`$${data.refundableRegFee}`}</td>
-                  <td>
-                  <button
-                    className={styles.plan_buttons}
-                    onClick={() => {
-                      addToCart({
-                        id: data.key,
-                        title: "1-Step Evaluation - 1",
-                        description: "Test",
-                        price: data.refundableRegFee,
-                        quantity: 1,
-                      });
-                      toast.success("Added to cart");
-                    }}
-                  >
-                    Choose Plan
-                  </button>
-                </td>
               </tr>
-                ))}
-                <ToastContainer />
-             
+              {oneStepEvaluation?.plans?.map((data, i) => (
+                <tr key={data.id}>
+                  <td>{`$${data.totalCost}`}</td>
+                  <td>{data.target}</td>
+                  <td>{data.minTradingDays}</td>
+                  <td>{data.maxTradingDays}</td>
+                  <td>{data.availableLeverage}</td>
+                  <td>{data.profitSplit}</td>
+                  <td>{`$${data.refundableRegFee}`}</td>
+                  <td>
+                    <button
+                      className={styles.plan_buttons}
+                      onClick={() => {
+                        if (data.product?.data) {
+                          const { title, price, description } =
+                            data.product.data.attributes;
+                          addToCart({
+                            id: data.product.data.id,
+                            title,
+                            description,
+                            price,
+                            quantity: 1,
+                          });
+                          toast.success("Added to cart");
+                        } else {
+                          toast.error("Product not available");
+                        }
+                      }}
+                    >
+                      Choose Plan
+                    </button>
+                  </td>
+                </tr>
+              ))}
+              <ToastContainer />
             </tbody>
           </table>
         )}
@@ -126,16 +138,15 @@ const Plan = (props) => {
         {showStandard && (
           <table className={`${styles.table} ${styles.scroll}`}>
             <tbody>
-              <tr style={{ background: "#FEE2CB",
-    color: "#212121"}}>
-            <th
+              <tr style={{ background: "#FEE2CB", color: "#212121" }}>
+                <th
                   style={{
                     backgroundColor: "#0C3A08",
                     color: "white",
                     fontSize: "16px",
                   }}
                 >
-                  1-STEP EVAL.
+                  STANDARD EVAL.
                 </th>
                 <th>Target</th>
                 <th>Minimum Trading Days</th>
@@ -143,38 +154,42 @@ const Plan = (props) => {
                 <th>Available Leverage</th>
                 <th>Profit Split</th>
                 <th>Refundable Registration Fee</th>
-                </tr>
-            {plan1.map((data, i) => (
-              <tr>
-                
-                <td key={i}>{`$${data.totalCost}`}</td>
-                  <td key={i}>{data.target}</td>
-                  <td key={i}>{data.minTradingDays}</td>
-                  <td key={i}>{data.maxTradingDays}</td>
-                  <td key={i}>{data.availableLeverage}</td>
-                  <td key={i}>{data.profitSplit}</td>
-                  <td key={i}>{`$${data.refundableRegFee}`}</td>
-                  <td>
-                  <button
-                    className={styles.plan_buttons}
-                    onClick={() => {
-                      addToCart({
-                        id: data.key,
-                        title: "Standard-Evaluation",
-                        description: "Test",
-                        price: data.refundableRegFee,
-                        quantity: 1,
-                      });
-                      toast.success("Added to cart");
-                    }}
-                  >
-                    Choose Plan
-                  </button>
-                </td>
               </tr>
-                ))}
-                <ToastContainer />
-             
+              {standardEvaluation?.plans.map((data, i) => (
+                <tr key={data.id}>
+                  <td>{`$${data.totalCost}`}</td>
+                  <td>{data.target}</td>
+                  <td>{data.minTradingDays}</td>
+                  <td>{data.maxTradingDays}</td>
+                  <td>{data.availableLeverage}</td>
+                  <td>{data.profitSplit}</td>
+                  <td>{`$${data.refundableRegFee}`}</td>
+                  <td>
+                    <button
+                      className={styles.plan_buttons}
+                      onClick={() => {
+                        if (data.product?.data) {
+                          const { title, price, description } =
+                            data.product.data.attributes;
+                          addToCart({
+                            id: data.product.data.id,
+                            title,
+                            description,
+                            price,
+                            quantity: 1,
+                          });
+                          toast.success("Added to cart");
+                        } else {
+                          toast.error("Product not available");
+                        }
+                      }}
+                    >
+                      Choose Plan
+                    </button>
+                  </td>
+                </tr>
+              ))}
+              <ToastContainer />
             </tbody>
           </table>
         )}
