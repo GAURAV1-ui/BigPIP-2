@@ -13,8 +13,6 @@ const Cart = () => {
 
   const router = useRouter();
 
-
-
   const {
     cartItems,
     updateQuantity,

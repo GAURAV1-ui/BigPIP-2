@@ -355,10 +355,11 @@
     
   }
 
-   .table {
-    width: 100%;
+   /* .table {
+  
     border-collapse: collapse;
     margin-bottom: 40px;
+ 
   }
   
   .table td{
@@ -367,13 +368,35 @@
     min-width: 150px;
   }
 
+  .table tr {
+    
+  }
+
   .table th {
     padding: 15px 30px;
     font-weight: 500;
     text-align: center;
     background: #FEE2CB;
+ 
   }
 
+
+
+  
+
+  } */
+
+  .scroll td:first-of-type {
+    padding: 1rem 0.5rem;
+    border: none;
+    background: #FEE2CB;
+    color: #212121;
+  }
+
+  .scroll tr:first-of-type {
+    position: sticky;
+    left: 0;
+  }
   .scroll_container {
     overflow: auto;
     margin-bottom: 40px;
@@ -384,17 +407,60 @@
     border: 1px solid;
     border-radius: 20px;
   }
-   .scroll {
-    margin: 0;
+
+  .table {
+    display: -ms-grid;
+    -ms-grid-rows: auto auto;
+    -ms-grid-columns: auto auto;
+    display: grid;
+    grid-template-columns: min-content min-content;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "caption caption"
+      "head body";
   }
+  .table thead {
+    grid-area: head;
+    display: flex;
+    flex-shrink: 0;
+    min-width: min-content;
+
+  }
+  .table tbody {
+      grid-area: body;
+      display: flex;
+
+  }
+  .table tr {
+    display: flex;
+    flex-direction: column;
+    min-width: min-content;
+    flex-shrink: 0;
+  }
+  .table td, .table th {
+    display: block;
+  }
+  /* .table caption {
+    display: block;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: caption; 
+  } */
   
-  .scroll td:first-of-type {
-    position: sticky;
-    left: 0;
-    padding: 1rem 0.5rem;
+  /* Visual styling */
+  .table {
+     border-collapse: collapse; }
+  .table td {
+    border: none; 
+    padding: 15px 10px;
+    text-align: center;
+  }
+  .table th {
+    padding: 15px 10px;
     border: none;
-    background: #FEE2CB;
-    color: #212121;
+   
+    font-weight: 400;
   }
 
   .plan_buttons {
@@ -439,16 +505,14 @@
       padding: 0.7rem;
     }
 
+    .table th {
+      max-width: 200px;
+      font-size: 15px;
+      
+    }
+
   }
-  /* .scroll td:first-of-type:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: -1px;
-    height: 100%;
-    width: 1px;
-    background: #000;
-  } */
+
   
   /* .scroll td:last-of-type {
     border-right: none;

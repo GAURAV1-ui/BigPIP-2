@@ -69,73 +69,44 @@ const Plan = (props) => {
       <div className={styles.scroll_container}>
         {showOneStep && (
           <table className={`${styles.table} ${styles.scroll}`}>
-            <thead>
-              <tr>
-                <td
+            <tbody>
+              <tr style={{ background: "#FEE2CB",
+    color: "#212121"}}>
+            <th
                   style={{
                     backgroundColor: "#0C3A08",
                     color: "white",
-                    fontSize: "18px",
+                    fontSize: "16px",
                   }}
                 >
                   1-STEP EVAL.
-                </td>
-                {plan.map((data, i) => (
-                  <th key={i}>{`$${data.totalCost}`}</th>
-                ))}
-              </tr>
-            </thead>
-
-            <tbody>
+                </th>
+                <th>Target</th>
+                <th>Minimum Trading Days</th>
+                <th>Maximum Trading Days</th>
+                <th>Available Leverage</th>
+                <th>Profit Split</th>
+                <th>Refundable Registration Fee</th>
+                </tr>
+            {plan.map((data, i) => (
               <tr>
-                <td>Target</td>
-                {plan.map((data, i) => (
+                
+                <td key={i}>{`$${data.totalCost}`}</td>
                   <td key={i}>{data.target}</td>
-                ))}
-              </tr>
-              <tr>
-                <td>Minimum Trading Days</td>
-                {plan.map((data, i) => (
                   <td key={i}>{data.minTradingDays}</td>
-                ))}
-              </tr>
-              <tr>
-                <td>Maximum Trading Days</td>
-                {plan.map((data, i) => (
                   <td key={i}>{data.maxTradingDays}</td>
-                ))}
-              </tr>
-              <tr>
-                <td>Available Leverage</td>
-                {/* <td>{plan[0].availableLeverage}</td> */}
-                {plan.map((data, i) => (
                   <td key={i}>{data.availableLeverage}</td>
-                ))}
-              </tr>
-              <tr>
-                <td>Profit Split</td>
-                {/* <td>{plan[0].profitSplit}</td> */}
-                {plan.map((data, i) => (
                   <td key={i}>{data.profitSplit}</td>
-                ))}
-              </tr>
-              <tr>
-                <td>Refundable Registration Fee</td>
-                {plan.map((data, i) => (
                   <td key={i}>{`$${data.refundableRegFee}`}</td>
-                ))}
-              </tr>
-              <tr>
-                <td></td>
-                <td>
+                  <td>
                   <button
                     className={styles.plan_buttons}
                     onClick={() => {
                       addToCart({
-                        id: 1,
+                        id: data.key,
                         title: "1-Step Evaluation - 1",
                         description: "Test",
-                        price: 99,
+                        price: data.refundableRegFee,
                         quantity: 1,
                       });
                       toast.success("Added to cart");
@@ -144,98 +115,66 @@ const Plan = (props) => {
                     Choose Plan
                   </button>
                 </td>
-                <td>
-                  <button className={styles.plan_buttons}>Choose Plan</button>
-                </td>
-                <td>
-                  <button className={styles.plan_buttons}>Choose Plan</button>
-                </td>
-                <td>
-                  <button className={styles.plan_buttons}>Choose Plan</button>
-                </td>
-                <ToastContainer />
               </tr>
+                ))}
+                <ToastContainer />
+             
             </tbody>
           </table>
         )}
 
         {showStandard && (
           <table className={`${styles.table} ${styles.scroll}`}>
-            <thead>
-              <tr>
-                <td
+            <tbody>
+              <tr style={{ background: "#FEE2CB",
+    color: "#212121"}}>
+            <th
                   style={{
                     backgroundColor: "#0C3A08",
                     color: "white",
-                    fontSize: "18px",
+                    fontSize: "16px",
                   }}
                 >
-                  STANDARD EVAL.
-                </td>
-                {plan1.map((data, i) => (
-                  <th key={i}>{`$${data.totalCost}`}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
+                  1-STEP EVAL.
+                </th>
+                <th>Target</th>
+                <th>Minimum Trading Days</th>
+                <th>Maximum Trading Days</th>
+                <th>Available Leverage</th>
+                <th>Profit Split</th>
+                <th>Refundable Registration Fee</th>
+                </tr>
+            {plan1.map((data, i) => (
               <tr>
-                <td>Target</td>
-                {plan1.map((data, i) => (
+                
+                <td key={i}>{`$${data.totalCost}`}</td>
                   <td key={i}>{data.target}</td>
-                ))}
-              </tr>
-              <tr>
-                <td>Minimum Trading Days</td>
-                {plan1.map((data, i) => (
                   <td key={i}>{data.minTradingDays}</td>
-                ))}
-              </tr>
-              <tr>
-                <td>Maximum Trading Days</td>
-                {plan1.map((data, i) => (
                   <td key={i}>{data.maxTradingDays}</td>
-                ))}
-              </tr>
-              <tr>
-                <td>Available Leverage</td>
-                {plan1.map((data, i) => (
                   <td key={i}>{data.availableLeverage}</td>
-                ))}
-              </tr>
-              <tr>
-                <td>Profit Split</td>
-                {plan1.map((data, i) => (
                   <td key={i}>{data.profitSplit}</td>
-                ))}
-              </tr>
-              <tr>
-                <td>Refundable Registration Fee</td>
-                {plan1.map((data, i) => (
                   <td key={i}>{`$${data.refundableRegFee}`}</td>
+                  <td>
+                  <button
+                    className={styles.plan_buttons}
+                    onClick={() => {
+                      addToCart({
+                        id: data.key,
+                        title: "Standard-Evaluation",
+                        description: "Test",
+                        price: data.refundableRegFee,
+                        quantity: 1,
+                      });
+                      toast.success("Added to cart");
+                    }}
+                  >
+                    Choose Plan
+                  </button>
+                </td>
+              </tr>
                 ))}
-              </tr>
-              <tr>
-                <td></td>
-                <td>
-                  <button className={styles.plan_buttons}>Choose Plan</button>
-                </td>
-                <td>
-                  <button className={styles.plan_buttons}>Choose Plan</button>
-                </td>
-                <td>
-                  <button className={styles.plan_buttons}>Choose Plan</button>
-                </td>
-                <td>
-                  <button className={styles.plan_buttons}>Choose Plan</button>
-                </td>
-                <td>
-                  <button className={styles.plan_buttons}>Choose Plan</button>
-                </td>
-                <td>
-                  <button className={styles.plan_buttons}>Choose Plan</button>
-                </td>
                 <ToastContainer />
-              </tr>
+             
             </tbody>
           </table>
         )}
@@ -243,13 +182,5 @@ const Plan = (props) => {
     </div>
   );
 };
-
-// export async function getServerSideProps() {
-//   const res = await fetch(
-//     `https://bigpip-cms.up.railway.app/api/testimonials?populate=*`
-//   );
-//   const data = await res.json();
-//   return { props: { data } };
-// }
 
 export default Plan;
