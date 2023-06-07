@@ -32,11 +32,11 @@ const Plan = (props) => {
         setPlan1(data.attributes.evaluation[0].plans);
         setStandardEvaluation(data.attributes.evaluation[0]);
         setOneStepEvaluation(data.attributes.evaluation[1]);
-        // console.log({
-        //   first: data.attributes.evaluation[0].plans,
-        //   second: data.attributes.evaluation[1].plans,
-        //   all: data,
-        // });
+        console.log({
+          first: data.attributes.evaluation[0].plans,
+          second: data.attributes.evaluation[1].plans,
+          all: data,
+        });
       })
       .catch((err) => {});
   }, []);
