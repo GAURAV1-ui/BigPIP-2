@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Link from "next/link";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import styles from "../styles/challengeObjective.module.css";
 
 const Challenge = () => {
@@ -14,13 +14,11 @@ const Challenge = () => {
       )
       .then((res) => {
         const data = res.data.data;
-        // console.log(data.attributes.evaluation);
         setChallenge(data.attributes.evaluation[0].descriptionPoints);
         setChallenge1(data.attributes.evaluation[1].descriptionPoints);
       })
       .catch((err) => {});
   }, []);
-  // console.log(challenge)
   return (
     <div className={styles.objective}>
       <div className={styles.objective_content}>
@@ -44,12 +42,16 @@ const Challenge = () => {
               {challenge.map((data) => (
                 <p key={data.listItemValue}>&#10003; {data.listItemValue}</p>
               ))}
+              <AnchorLink href='#plans'>
               <button className={styles.objective_card_content_btn_split}>
                 &#43; Profit Split : 85%
               </button>
+              </AnchorLink>
+              <AnchorLink href='#plans'>
               <button className={styles.objective_card_content_btn_plan}>
                 Choose Plans
               </button>
+              </AnchorLink>
             </div>
           </div>
           <div
@@ -65,12 +67,16 @@ const Challenge = () => {
               {challenge1.map((data) => (
                 <p key={data.listItemValue}>&#10003; {data.listItemValue}</p>
               ))}
-              <button className={styles.objective_card_content_btn_split}>
+                 <AnchorLink href='#plans'>
+                  <button className={styles.objective_card_content_btn_split}>
                 &#43; Profit Split: 70%
               </button>
-              <button className={styles.objective_card_content_btn_plan}>
+              </AnchorLink>
+              <AnchorLink href='#plans'>
+                <button className={styles.objective_card_content_btn_plan}>
                 Choose Plans
               </button>
+              </AnchorLink>
             </div>
           </div>
         </div>

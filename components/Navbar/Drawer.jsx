@@ -2,9 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
+import { useAuth } from "@/utils/contexts/AuthContext";
 
 const SNavbarBrand = styled.h2`
   font-size: 2.5rem;
+  cursor: pointer;
 `;
 const Backdrop = styled.div`
   height: 100%;
@@ -65,7 +67,9 @@ const Drawer = ({ isOpen, toggleDrawer }) => {
   const router = useRouter();
   const clickImageHandler = () => {
     router.push("/");
-  }
+  };
+
+  const { currentUser, signOut } = useAuth();
 
   return (
     <>
@@ -99,15 +103,41 @@ const Drawer = ({ isOpen, toggleDrawer }) => {
                 onClick={toggleDrawer}>
                   Cart
                 </NavRoute>
+                {currentUser ? (
+              <div
+                style={{
+                  color: "#0A4007",
+                  textDecoration: "underline",
+                  cursor: "pointer",
+                }}
+                onClick={signOut}
+              >
+                <p
+                style={{color: "black",
+                 textDecoration: "none",
+                 marginLeft: "8px",
+                 marginTop: "8px",
+                fontWeight: "400",
+                fontSize: "18px"
+                }}>
+                {currentUser?.name.split(' ').slice(0, -1).join(' ')}
+                </p>
+              </div>
+            ) : (
+              <LoginButton
+              onClick={toggleDrawer}>
+                <NavRoute href="signin">Log in/ Sign up</NavRoute>
+              </LoginButton>
+            )}
 
           </NavRoutes>
-          <LoginButton>
+          {/* <LoginButton>
             <NavRoute 
             href='signin' 
             onClick={toggleDrawer} >
                 Log in/ Sign up
             </NavRoute>
-          </LoginButton>
+          </LoginButton> */}
         </RightNav>
       </SDrawer>
     </>

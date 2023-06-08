@@ -99,8 +99,6 @@ const Navbar = ({ toggleDrawer }) => {
 
   const { currentUser, signOut } = useAuth();
 
-  console.log({ currentUser });
-
   return (
     <SNavbar>
       <NavContainer>
