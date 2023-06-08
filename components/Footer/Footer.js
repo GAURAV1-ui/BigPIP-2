@@ -30,13 +30,13 @@ const Footer = () => {
           <div className={styles.footer_items} style={{ textAlign: "left" }}>
             <h3>Quick Links</h3>
             <ul className={styles.footer_items_ul}>
-              <Link href="/">
+              <Link target="_blank" href="/">
                 <li>Home</li>
               </Link>
-              <Link href="/aboutus">
+              <Link target="_blank" href="/getstarted">
                 <li>About Us</li>
               </Link>
-              <Link href="/login">
+              <Link target="_blank" href="/signin">
                 <li>Login</li>
               </Link>
               <Link target="_blank" href="https://bigpipfunding.goaffpro.com/">

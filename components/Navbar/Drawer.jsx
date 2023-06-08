@@ -131,13 +131,6 @@ const Drawer = ({ isOpen, toggleDrawer }) => {
             )}
 
           </NavRoutes>
-          {/* <LoginButton>
-            <NavRoute 
-            href='signin' 
-            onClick={toggleDrawer} >
-                Log in/ Sign up
-            </NavRoute>
-          </LoginButton> */}
         </RightNav>
       </SDrawer>
     </>
