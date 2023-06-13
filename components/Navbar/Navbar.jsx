@@ -78,11 +78,7 @@ const Navbar = ({ toggleDrawer }) => {
 
   const { currentUser } = useAuth();
 
-  const {
-    cartItems,
-  } = useCart();
-
-
+  const { cartItems } = useCart();
 
   // let amount= 0;
   //   const cart = cartItems.map((items) => (
@@ -91,9 +87,6 @@ const Navbar = ({ toggleDrawer }) => {
   //   amount += cart[0];
   //   console.log(amount)
 
-
-
-  
   return (
     <SNavbar>
       <NavContainer>
@@ -103,7 +96,7 @@ const Navbar = ({ toggleDrawer }) => {
         <Image
           src="/logo.png"
           alt="/"
-          style={{cursor: "pointer"}}
+          style={{ cursor: "pointer" }}
           onClick={clickImageHandler}
           width={220}
           height={35}
@@ -119,7 +112,7 @@ const Navbar = ({ toggleDrawer }) => {
             <NavRoute href="getstarted" key="getstarted">
               Get Started
             </NavRoute>
-            
+
             <NavRoute href="cart" key="cart">
               Cart
             </NavRoute>
@@ -132,20 +125,8 @@ const Navbar = ({ toggleDrawer }) => {
                   cursor: "pointer",
                 }}
               >
-<<<<<<< HEAD
                 {currentUser?.name}
               </Link>
-=======
-                <p
-                style={{color: "black",
-                 textDecoration: "none",
-                fontWeight: "400",
-                fontSize: "18px"
-                }}>
-                {currentUser?.name.split(' ').slice(0, -1).join(' ')}
-                </p>
-              </div>
->>>>>>> 9f527289bd8949a4e669ef1269f3ae065db45d22
             ) : (
               <LoginButton>
                 <NavRoute href="signin">Log in/ Sign up</NavRoute>
