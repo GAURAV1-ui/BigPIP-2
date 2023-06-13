@@ -1,0 +1,66 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+}
+.orders {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #d5d5d5;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+.orderStatus {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.orderStatus .status,
+.orderStatus .transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.itemsContainer {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.itemsContainer table {
+  width: 100%;
+  text-align: left;
+}
+
+.itemsContainer th,
+.itemsContainer td {
+  padding: 5px;
+}
+
+.container > button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #f75353;
+  color: white;
+  cursor: pointer;
+}
+
+.itemsContainer th {
+  background-color: #f6f6f6;
+}

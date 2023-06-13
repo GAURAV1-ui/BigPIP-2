@@ -97,7 +97,7 @@ const Navbar = ({ toggleDrawer }) => {
     router.push("/");
   };
 
-  const { currentUser, signOut } = useAuth();
+  const { currentUser } = useAuth();
 
   console.log({ currentUser });
 
@@ -130,16 +130,16 @@ const Navbar = ({ toggleDrawer }) => {
               Cart
             </NavRoute>
             {currentUser ? (
-              <div
+              <Link
+                href="/profile"
                 style={{
                   color: "#0A4007",
                   textDecoration: "underline",
                   cursor: "pointer",
                 }}
-                onClick={signOut}
               >
                 {currentUser?.name}
-              </div>
+              </Link>
             ) : (
               <LoginButton>
                 <NavRoute href="signin">Log in/ Sign up</NavRoute>
