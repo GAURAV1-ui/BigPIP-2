@@ -70,7 +70,13 @@ const Profile = () => {
               <div className={styles.transaction}>
                 <h4>Date: {new Date(order.createdAt).toLocaleDateString()}</h4>
                 <h4>Total: ${getTotal(order.products)}</h4>
-                <h4>Transaction ID: {order.transactionId}</h4>
+                <h4
+                  onClick={() =>
+                    alert("Transaction ID: " + order.transactionId)
+                  }
+                >
+                  Transaction ID: {order.transactionId?.slice(0, 5)}...
+                </h4>
               </div>
             </div>
             <div className={styles.itemsContainer}>
