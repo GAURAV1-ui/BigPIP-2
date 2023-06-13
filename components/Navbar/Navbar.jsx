@@ -1,13 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FaBars } from "react-icons/fa";
 import { useAuth } from "@/utils/contexts/AuthContext";
-
-// import logo from "";
-// import Menu from "./Menu";
+import { useCart } from "@/utils/contexts/CartContext";
 
 const DrawerButton = styled.button`
   all: unset;
@@ -31,26 +29,7 @@ const NavContainer = styled.div`
   align-items: center;
   color: black;
 `;
-// const SNavbarBrand = styled.h2`
-//   font-size: 2rem;
-// `;
 
-// const Image = styled.img`
-//     cursor:pointer;
-//     width:18%;
-//     z-index:1;
-//     @media (max-width: 600px) {
-//       width: 55%;
-//     }
-// `;
-
-// const SNav = styled.h1 `
-//   font-size : 35px;
-//   cursor: pointer;
-//   @media (max-width: 768px) {
-//     font-size: 1.8rem;
-//   }
-// `
 const RightNav = styled.div`
   display: flex;
   gap: 2rem;
@@ -99,18 +78,32 @@ const Navbar = ({ toggleDrawer }) => {
 
   const { currentUser } = useAuth();
 
-  console.log({ currentUser });
+  const {
+    cartItems,
+  } = useCart();
 
+
+
+  // let amount= 0;
+  //   const cart = cartItems.map((items) => (
+  //     items.price*items.quantity
+  //   ))
+  //   amount += cart[0];
+  //   console.log(amount)
+
+
+
+  
   return (
     <SNavbar>
       <NavContainer>
         <DrawerButton onClick={toggleDrawer}>
           <FaBars />
         </DrawerButton>
-        {/* <Image src={logo} onClick = {clickImageHandler} >BigPIP </Image> */}
         <Image
           src="/logo.png"
           alt="/"
+          style={{cursor: "pointer"}}
           onClick={clickImageHandler}
           width={220}
           height={35}
@@ -126,6 +119,7 @@ const Navbar = ({ toggleDrawer }) => {
             <NavRoute href="getstarted" key="getstarted">
               Get Started
             </NavRoute>
+            
             <NavRoute href="cart" key="cart">
               Cart
             </NavRoute>
@@ -138,8 +132,20 @@ const Navbar = ({ toggleDrawer }) => {
                   cursor: "pointer",
                 }}
               >
+<<<<<<< HEAD
                 {currentUser?.name}
               </Link>
+=======
+                <p
+                style={{color: "black",
+                 textDecoration: "none",
+                fontWeight: "400",
+                fontSize: "18px"
+                }}>
+                {currentUser?.name.split(' ').slice(0, -1).join(' ')}
+                </p>
+              </div>
+>>>>>>> 9f527289bd8949a4e669ef1269f3ae065db45d22
             ) : (
               <LoginButton>
                 <NavRoute href="signin">Log in/ Sign up</NavRoute>

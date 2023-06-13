@@ -42,7 +42,7 @@ const Plan = (props) => {
   }, []);
 
   return (
-    <div>
+    <div id="plans">
       <div className={styles.plan}>
         <div className={styles.plan_content}>
           <h3 className={styles.plan_content_h}>Choose your Account Type</h3>

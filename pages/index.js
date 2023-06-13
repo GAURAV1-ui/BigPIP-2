@@ -21,6 +21,7 @@ export default function Home(props) {
     }
   }, [counter]);
 
+
   useEffect(() => {
     // if (counter1 < 8) {
     if (counter1 < props.data.data.attributes.hero.paidOut) {
