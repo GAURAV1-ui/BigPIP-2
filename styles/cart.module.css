@@ -1,6 +1,5 @@
-
-
-.cf:before, .cf:after {
+.cf:before,
+.cf:after {
   content: " ";
   display: table;
 }
@@ -15,7 +14,7 @@
 
 .wrap {
   width: 75%;
-  max-width:960px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 5% 0;
   margin-bottom: 5em;
@@ -39,22 +38,23 @@
 
 .heading {
   padding: 0.5em 0;
-  border-bottom: 1px solid #D0D0D0;
+  border-bottom: 1px solid #d0d0d0;
 }
 .heading h1 {
   font-family: "Droid Serif", serif;
   font-size: 2em;
   float: left;
 }
-.heading a.continue:link, .heading a.continue:visited {
+.heading a.continue:link,
+.heading a.continue:visited {
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
-  letter-spacing: -.015em;
-  font-size: .75em;
+  letter-spacing: -0.015em;
+  font-size: 0.75em;
   padding: 1em;
   margin-top: 1rem;
   color: #fff;
-  background: #0C3901;
+  background: #0c3901;
   font-weight: bold;
   border-radius: 50px;
   float: right;
@@ -67,7 +67,7 @@
 }
 .heading a.continue:after {
   content: "\276f";
-  padding: .5em;
+  padding: 0.5em;
   position: relative;
   right: 0;
   -webkit-transition: all 0.15s linear;
@@ -76,10 +76,14 @@
   -o-transition: all 0.15s linear;
   transition: all 0.15s linear;
 }
-.heading a.continue:hover, .heading a.continue:focus, .heading a.continue:active {
+.heading a.continue:hover,
+.heading a.continue:focus,
+.heading a.continue:active {
   background: #de5e37;
 }
-.heading a.continue:hover:after, .heading a.continue:focus:after, .heading a.continue:active:after {
+.heading a.continue:hover:after,
+.heading a.continue:focus:after,
+.heading a.continue:active:after {
   right: -10px;
 }
 
@@ -87,7 +91,7 @@
   display: table;
   width: 100%;
   font-family: "Montserrat", sans-serif;
-  font-size: .75em;
+  font-size: 0.75em;
 }
 .tableHead li {
   display: table-cell;
@@ -102,7 +106,7 @@
   padding: 1em 0;
 }
 .cart ul {
-    padding-inline-start: 0px;
+  padding-inline-start: 0px;
 }
 .cart .items {
   display: block;
@@ -123,20 +127,20 @@
   vertical-align: middle;
 }
 .cart .items .cartSection .itemNumber {
-  font-size: .75em;
+  font-size: 0.75em;
   color: #777;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 .cart .items .cartSection h3 {
   font-size: 1em;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: .025em;
+  letter-spacing: 0.025em;
 }
 .cart .items .cartSection p {
   display: inline-block;
-  font-size: .85em;
+  font-size: 0.85em;
   color: #777777;
   font-family: "Montserrat", sans-serif;
 }
@@ -145,22 +149,24 @@
   color: #333;
 }
 .cart .items .cartSection p.stockStatus {
-  color: #82CA9C;
+  color: #82ca9c;
   font-weight: bold;
-  padding: .5em 0 0 1em;
+  padding: 0.5em 0 0 1em;
   text-transform: uppercase;
 }
 .cart .items .cartSection p.stockStatus.out {
-  color: #F69679;
+  color: #f69679;
 }
 .cart .items .cartSection .itemImg {
   width: 4em;
   float: left;
 }
-.cart .items .cartSection.qtyWrap, .cart .items .cartSection.prodTotal {
+.cart .items .cartSection.qtyWrap,
+.cart .items .cartSection.prodTotal {
   text-align: center;
 }
-.cart .items .cartSection.qtyWrap p, .cart .items .cartSection.prodTotal p {
+.cart .items .cartSection.qtyWrap p,
+.cart .items .cartSection.prodTotal p {
   font-weight: bold;
   font-size: 1.25em;
 }
@@ -168,8 +174,8 @@
   width: 3em;
   text-align: center;
   font-size: 1em;
-  padding: .25em;
-  margin: 1em .5em 0 0;
+  padding: 0.25em;
+  margin: 1em 0.5em 0 0;
 }
 .cart .items .cartSection .itemImg {
   width: 8em;
@@ -183,7 +189,7 @@
 .special .specialContent {
   padding: 1em 1em 0;
   display: block;
-  margin-top: .5em;
+  margin-top: 0.5em;
   border-top: 1px solid #dadada;
 }
 .special .specialContent:before {
@@ -200,11 +206,11 @@ a.remove {
   color: #ffffff;
   font-weight: bold;
   background: #e0e0e0;
-  padding: .5em;
-  font-size: .75em;
+  padding: 0.5em;
+  font-size: 0.75em;
   display: inline-block;
   border-radius: 100%;
-  line-height: .85;
+  line-height: 0.85;
   -webkit-transition: all 0.25s linear;
   -moz-transition: all 0.25s linear;
   -ms-transition: all 0.25s linear;
@@ -226,23 +232,24 @@ a.remove:hover {
   width: 100%;
   font-style: italic;
   font-size: 1.15em;
-  margin-bottom: .5em;
-  letter-spacing: -.025em;
+  margin-bottom: 0.5em;
+  letter-spacing: -0.025em;
 }
 .promoCode input {
   width: 85%;
   font-size: 1em;
-  padding: .5em;
+  padding: 0.5em;
   float: left;
   border: 1px solid #dadada;
 }
-.promoCode input:active, .promoCode input:focus {
+.promoCode input:active,
+.promoCode input:focus {
   outline: 0;
 }
 .promoCode a.btn {
   float: left;
   width: 15%;
-  padding: .75em 0;
+  padding: 0.75em 0;
   border-radius: 0 1em 1em 0;
   text-align: center;
   border: 1px solid #82ca9c;
@@ -252,14 +259,15 @@ a.remove:hover {
   background: #de5e37;
 }
 
-.btn:link, .btn:visited {
+.btn:link,
+.btn:visited {
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
-  letter-spacing: -.015em;
+  letter-spacing: -0.015em;
   font-size: 1em;
   padding: 0.8em 3em;
   color: #fff;
-  background: #0C3901;
+  background: #0c3901;
   font-weight: bold;
   border-radius: 50px;
   float: right;
@@ -272,7 +280,7 @@ a.remove:hover {
 }
 .btn:after {
   content: "\276f";
-  padding: .5em;
+  padding: 0.5em;
   position: relative;
   right: 0;
   -webkit-transition: all 0.15s linear;
@@ -281,15 +289,19 @@ a.remove:hover {
   -o-transition: all 0.15s linear;
   transition: all 0.15s linear;
 }
-.btn:hover, .btn:focus, .btn:active {
+.btn:hover,
+.btn:focus,
+.btn:active {
   background: #de5e37;
 }
-.btn:hover:after, .btn:focus:after, .btn:active:after {
+.btn:hover:after,
+.btn:focus:after,
+.btn:active:after {
   right: -10px;
 }
 .promoCode .btn {
-  font-size: .75em;
-  padding: .4em 2em;
+  font-size: 0.75em;
+  padding: 0.4em 2em;
 }
 
 .subtotal {
@@ -297,10 +309,10 @@ a.remove:hover {
   width: 35%;
 }
 .subtotal li {
-    list-style-type: none;
+  list-style-type: none;
 }
 .subtotal .totalRow {
-  padding: .5em;
+  padding: 0.5em;
   text-align: right;
 }
 .subtotal .totalRow.final {
@@ -313,13 +325,27 @@ a.remove:hover {
 }
 .subtotal .totalRow .label {
   font-family: "Montserrat", sans-serif;
-  font-size: .85em;
+  font-size: 0.85em;
   text-transform: uppercase;
   color: #777;
 }
 .subtotal .totalRow .value {
-  letter-spacing: -.025em;
+  letter-spacing: -0.025em;
   width: 35%;
+}
+
+.totalRow .cbpay {
+  padding: 0;
+  width: 250px;
+  height: 50px;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.totalRow .cbpay img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 @media only screen and (max-width: 39.375em) {
@@ -349,24 +375,26 @@ a.remove:hover {
   .cart .items .cartSection.qtyWrap {
     width: 10%;
     text-align: center;
-    padding: .5em 0;
+    padding: 0.5em 0;
     float: right;
   }
   .cart .items .cartSection.qtyWrap:before {
     content: "QTY";
     display: block;
     font-family: "Montserrat", sans-serif;
-    padding: .25em;
-    font-size: .75em;
+    padding: 0.25em;
+    font-size: 0.75em;
   }
-  .cart .items .cartSection.prodTotal, .cart .items .cartSection.removeWrap {
+  .cart .items .cartSection.prodTotal,
+  .cart .items .cartSection.removeWrap {
     display: none;
   }
   .cart .items .cartSection .itemImg {
     width: 25%;
   }
 
-  .promoCode, .subtotal {
+  .promoCode,
+  .subtotal {
     width: 100%;
   }
 

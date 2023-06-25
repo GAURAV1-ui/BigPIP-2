@@ -6,6 +6,8 @@ import { loadStripe } from "@stripe/stripe-js";
 import { API } from "@/utils/api/config";
 import { useAuth } from "@/utils/contexts/AuthContext";
 import { useRouter } from "next/router";
+import { initOnRamp } from "@coinbase/cbpay-js";
+import CoinbasePayButton from "@/components/CoinbasePayButton";
 
 const Cart = () => {
   const [discountAmount, setDiscountAmount] = useState(0);
@@ -152,8 +154,9 @@ const Cart = () => {
                 onClick={handlePayment}
                 className={`${styles.btn} ${styles.continue}`}
               >
-                Checkout
+                Checkout (Stripe)
               </Link>
+              {/* <CoinbasePayButton /> */}
             </li>
           </ul>
         </div>

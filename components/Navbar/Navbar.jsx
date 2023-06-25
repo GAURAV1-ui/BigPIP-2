@@ -94,12 +94,12 @@ const Navbar = ({ toggleDrawer }) => {
           <FaBars />
         </DrawerButton>
         <Image
-          src="/logo.png"
+          src="/bigpip-logo.png"
           alt="/"
           style={{ cursor: "pointer" }}
           onClick={clickImageHandler}
-          width={220}
-          height={35}
+          width={212}
+          height={39}
         />
         <RightNav>
           <NavRoutes>

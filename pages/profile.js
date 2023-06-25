@@ -101,6 +101,11 @@ const Profile = () => {
             </div>
           </div>
         ))}
+        {orders.length === 0 && (
+          <div className={styles.noOrders}>
+            <h3>No orders yet</h3>
+          </div>
+        )}
       </div>
       <button onClick={signOut}>Logout</button>
     </section>
